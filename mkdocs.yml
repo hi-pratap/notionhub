@@ -133,6 +133,7 @@ nav:
     - blog/index.md  
   - Questions:
     - Questions-list/index.md
+    - Core Java: dump.md
 
 extra_css:
   - stylesheets/extra.css
