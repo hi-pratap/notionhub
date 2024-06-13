@@ -133,7 +133,18 @@ nav:
     - blog/index.md  
   - Questions:
     - Questions-list/index.md
-    - Core Java: dump.md
+    - Core Java: Questions-list/CoreJava.md
+    - Microservices: Questions-list/MicroServices.md
+    - Spring-Boot: Questions-list/SpringBootQues.md
+    - Spring-Data-Jpa: Questions-list/SpringDataJpa.md
+    - Spring-Security: Questions-list/SpringSecurity.md
+    - Stream Api: Questions-list/StreamApi.md
+    - Design Pattern: Questions-list/DesignPatterns.md
+    - Java Programs: Questions-list/JavaCoding.md
+    - Kafka: Questions-list/kafka.md
+    - Git: Questions-list/git.md
+    - Maven: Questions-list/maven.md
+
 
 extra_css:
   - stylesheets/extra.css
