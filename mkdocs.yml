@@ -1,14 +1,14 @@
 
 site_name: Note-Book
-site_url: https://squidfunk.github.io/mkdocs-material/
+# site_url: https://squidfunk.github.io/mkdocs-material/
 site_author: Pratap Adhav
 site_description: >-
   Write your documentation in Markdown and create a professional static site in
   minutes – searchable, customizable, in 60+ languages, for all devices
 
 # Repository
-repo_name: squidfunk/mkdocs-material
-repo_url: https://github.com/squidfunk/mkdocs-material
+# repo_name: squidfunk/mkdocs-material
+# repo_url: https://github.com/squidfunk/mkdocs-material
 
 # Copyright
 copyright: Copyright &copy; 2016 - 2024 Pratap Adhav
@@ -66,9 +66,11 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
-  icon:
-    logo: logo
+  favicon: assets/icons8-batman-logo-120.png
+  # favicon: assets/sign.png
+  # icon:
+  #   logo: simple/codefresh
+  logo: assets/logo.png
 
 # Plugins
 plugins:
@@ -87,7 +89,7 @@ extra:
 
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
+      link: https://github.com/hi-pratap
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/r/squidfunk/mkdocs-material/
     - icon: fontawesome/brands/python
@@ -115,7 +117,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - pw: 
+  - Pw: 
     - PwSkills-Notes.md
     - Basics: pw-docs/Basics.md
     - Conditionals: pw-docs/conditionals.md
@@ -126,4 +128,9 @@ nav:
     - Strings: pw-docs/Basics.md
  
   - Blog:
-    - blog/index.md
+    - blog/index.md  
+  - Questions:
+    - Questions-list/index.md
+
+extra_css:
+  - stylesheets/extra.css

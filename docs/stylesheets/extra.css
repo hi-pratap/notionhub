@@ -1,0 +1,19 @@
+:root {
+
+
+}
+[data-md-color-primary=indigo] {
+  --md-primary-fg-color: #476f00;
+}
+:root > * {
+
+
+
+  /* // Code highlighting syntax color shades */
+  
+  /* --md-footer-bg-color: #155965;
+  --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
+  --md-footer-fg-color: hsla(0, 0%, 100%, 1);
+  --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
+  --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3); */
+}
