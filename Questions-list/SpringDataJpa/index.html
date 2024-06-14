@@ -1,0 +1,2191 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Write your documentation in Markdown and create a professional static site in minutes – searchable, customizable, in 60+ languages, for all devices">
+      
+      
+        <meta name="author" content="Pratap Adhav">
+      
+      
+      
+        <link rel="prev" href="../SpringBootQues/">
+      
+      
+        <link rel="next" href="../SpringSecurity/">
+      
+      
+      <link rel="icon" href="../../assets/halloween.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Spring-Data-Jpa - Note-Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-what-is-spring-data-jpa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Note-Book" class="md-header__button md-logo" aria-label="Note-Book" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Note-Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spring-Data-Jpa
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PwSkills-Notes/" class="md-tabs__link">
+          
+  
+    
+  
+  Pw
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Questions
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Note-Book" class="md-nav__button md-logo" aria-label="Note-Book" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Note-Book
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pw
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pw
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PwSkills-Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PwSkills
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/conditionals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditionals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/PatternPrinting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pattern Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/Arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays And ArrayList
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pw-docs/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Questions
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Questions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CoreJava/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MicroServices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBootQues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring-Boot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Spring-Data-Jpa
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Spring-Data-Jpa
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) What is Spring Data JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-explain-features-of-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Explain features of Spring Data JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-use-of-temporal-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Use of @Temporal annotation.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-write-a-query-method-for-sorting-in-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Write a query method for sorting in Spring Data JPA.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-explain-transactional-annotation-in-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      11) Explain @Transactional annotation in Spring.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-what-is-the-difference-between-fetchtypeeager-and-fetchtypelazy" class="md-nav__link">
+    <span class="md-ellipsis">
+      12) What is the difference between FetchType.Eager and FetchType.Lazy?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-use-of-id-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      13) Use of @Id annotation.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-how-will-you-create-a-composite-primary-key-in-spring-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      14) How will you create a composite primary key in Spring JPA.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-what-is-the-use-of-enablejparepositories-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      15) What is the use of @EnableJpaRepositories method?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-what-are-the-rules-to-follow-to-declare-custom-methods-in-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      16) What are the rules to follow to declare custom methods in Repository.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-explain-querybyexample-in-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      17) Explain QueryByExample in spring data jpa.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-what-is-pagination-and-how-to-implement-pagination-in-spring-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      18) What is pagination and how to implement pagination in spring data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-explain-few-crudrepository-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      19) Explain few CrudRepository methods.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-difference-between-delete-and-deleteinbatch-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      20) Difference between delete() and deleteInBatch() methods.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-you-need-to-execute-a-complex-query-that-involves-multiple-tables-and-conditional-logic-how-do-you-implement-this-in-spring-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      21) You need to execute a complex query that involves multiple tables and conditional logic. How do you implement this in Spring JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-your-application-requires-the-insertion-of-thousands-of-records-into-the-database-at-once-how-do-you-optimize-this-batch-process-using-spring-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      22) Your application requires the insertion of thousands of records into the database at once. How do you optimize this batch process using Spring JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-you-have-entities-with-bidirectional-relationships-how-do-you-ensure-these-are-correctly-managed-in-spring-jpa-to-avoid-common-issues-like-infinite-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      23) You have entities with bidirectional relationships. How do you ensure these are correctly managed in Spring JPA to avoid common issues like infinite recursion?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-how-do-you-handle-schema-migration-in-a-project-using-spring-jpa-when-the-schema-changes-due-to-business-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      24) How do you handle schema migration in a project using Spring JPA when the schema changes due to business requirements?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-you-are-experiencing-performance-issues-with-certain-frequently-accessed-data-how-can-you-implement-caching-in-spring-jpa-to-improve-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      25) You are experiencing performance issues with certain frequently accessed data. How can you implement caching in Spring JPA to improve performance?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hibernate-most-asked-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hibernate Most Asked Interview Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hibernate Most Asked Interview Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. What is Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-what-are-the-core-components-of-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. What are the core components of Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-explain-the-role-of-the-sessionfactory-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. Explain the role of the SessionFactory in Hibernate.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-what-is-a-session-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. What is a Session in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-how-does-hibernate-manage-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5. How does Hibernate manage transactions?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6-what-is-hql-hibernate-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q6. What is HQL (Hibernate Query Language)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q7-what-is-the-criteria-api-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q7. What is the Criteria API in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q8-explain-the-concept-of-object-states-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q8. Explain the concept of Object States in Hibernate.**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q9-what-is-the-purpose-of-the-configuration-class-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q9. What is the purpose of the Configuration class in Hibernate?**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q10-describe-the-second-level-cache-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q10. Describe the Second Level Cache in Hibernate.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q11-what-are-the-differences-between-get-and-load-methods-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q11. What are the differences between get() and load() methods in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q12-how-does-hibernate-ensure-data-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q12. How does Hibernate ensure data integrity?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q13-what-is-the-n1-select-problem-in-hibernate-how-can-it-be-prevented" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q13. What is the N+1 SELECT problem in Hibernate? How can it be prevented?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q14-explain-the-role-of-the-entity-annotation-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q14. Explain the role of the @Entity annotation in Hibernate.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q15-what-is-cascading-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q15. What is cascading in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q16-what-is-a-composite-key-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q16. What is a Composite Key in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q17-how-does-hibernate-handle-sql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q17. How does Hibernate handle SQL Injection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q18-what-is-lazy-loading-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q18. What is Lazy Loading in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q19-how-can-you-achieve-concurrency-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q19. How can you achieve concurrency in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q20-what-is-an-optimistic-locking-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q20. What is an optimistic locking in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q21-you-have-noticed-that-your-hibernate-application-is-running-slowly-when-fetching-data-from-a-database-with-many-relationships-what-strategy-could-you-use-to-improve-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q21. You have noticed that your Hibernate application is running slowly when fetching data from a database with many relationships. What strategy could you use to improve performance?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q22-how-do-you-handle-a-hibernate-session-in-a-web-application-to-ensure-that-it-is-properly-closed-avoiding-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q22. How do you handle a Hibernate session in a web application to ensure that it is properly closed, avoiding memory leaks?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q23-during-a-transaction-an-error-occurs-after-several-database-operations-have-been-successfully-executed-how-does-hibernate-ensure-data-integrity-in-this-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q23. During a transaction, an error occurs after several database operations have been successfully executed. How does Hibernate ensure data integrity in this situation?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q24-you-need-to-add-auditing-features-to-track-changes-in-entity-data-what-hibernate-feature-would-you-use-to-achieve-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q24. You need to add auditing features to track changes in entity data. What Hibernate feature would you use to achieve this?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q25-you-are-working-with-a-legacy-database-where-the-table-and-column-names-do-not-follow-your-standard-naming-conventions-how-can-you-map-these-tables-without-modifying-the-existing-database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q25. You are working with a legacy database where the table and column names do not follow your standard naming conventions. How can you map these tables without modifying the existing database schema?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringSecurity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spring-Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StreamApi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stream Api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DesignPatterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Pattern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JavaCoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Programs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kafka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kafka
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maven
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) What is Spring Data JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-explain-features-of-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Explain features of Spring Data JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-use-of-temporal-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Use of @Temporal annotation.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-write-a-query-method-for-sorting-in-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Write a query method for sorting in Spring Data JPA.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-explain-transactional-annotation-in-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      11) Explain @Transactional annotation in Spring.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-what-is-the-difference-between-fetchtypeeager-and-fetchtypelazy" class="md-nav__link">
+    <span class="md-ellipsis">
+      12) What is the difference between FetchType.Eager and FetchType.Lazy?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-use-of-id-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      13) Use of @Id annotation.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-how-will-you-create-a-composite-primary-key-in-spring-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      14) How will you create a composite primary key in Spring JPA.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-what-is-the-use-of-enablejparepositories-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      15) What is the use of @EnableJpaRepositories method?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-what-are-the-rules-to-follow-to-declare-custom-methods-in-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      16) What are the rules to follow to declare custom methods in Repository.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-explain-querybyexample-in-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      17) Explain QueryByExample in spring data jpa.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-what-is-pagination-and-how-to-implement-pagination-in-spring-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      18) What is pagination and how to implement pagination in spring data?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-explain-few-crudrepository-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      19) Explain few CrudRepository methods.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-difference-between-delete-and-deleteinbatch-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      20) Difference between delete() and deleteInBatch() methods.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-you-need-to-execute-a-complex-query-that-involves-multiple-tables-and-conditional-logic-how-do-you-implement-this-in-spring-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      21) You need to execute a complex query that involves multiple tables and conditional logic. How do you implement this in Spring JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-your-application-requires-the-insertion-of-thousands-of-records-into-the-database-at-once-how-do-you-optimize-this-batch-process-using-spring-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      22) Your application requires the insertion of thousands of records into the database at once. How do you optimize this batch process using Spring JPA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-you-have-entities-with-bidirectional-relationships-how-do-you-ensure-these-are-correctly-managed-in-spring-jpa-to-avoid-common-issues-like-infinite-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      23) You have entities with bidirectional relationships. How do you ensure these are correctly managed in Spring JPA to avoid common issues like infinite recursion?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-how-do-you-handle-schema-migration-in-a-project-using-spring-jpa-when-the-schema-changes-due-to-business-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      24) How do you handle schema migration in a project using Spring JPA when the schema changes due to business requirements?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-you-are-experiencing-performance-issues-with-certain-frequently-accessed-data-how-can-you-implement-caching-in-spring-jpa-to-improve-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      25) You are experiencing performance issues with certain frequently accessed data. How can you implement caching in Spring JPA to improve performance?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hibernate-most-asked-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hibernate Most Asked Interview Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hibernate Most Asked Interview Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. What is Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-what-are-the-core-components-of-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. What are the core components of Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-explain-the-role-of-the-sessionfactory-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. Explain the role of the SessionFactory in Hibernate.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-what-is-a-session-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. What is a Session in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-how-does-hibernate-manage-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5. How does Hibernate manage transactions?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6-what-is-hql-hibernate-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q6. What is HQL (Hibernate Query Language)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q7-what-is-the-criteria-api-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q7. What is the Criteria API in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q8-explain-the-concept-of-object-states-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q8. Explain the concept of Object States in Hibernate.**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q9-what-is-the-purpose-of-the-configuration-class-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q9. What is the purpose of the Configuration class in Hibernate?**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q10-describe-the-second-level-cache-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q10. Describe the Second Level Cache in Hibernate.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q11-what-are-the-differences-between-get-and-load-methods-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q11. What are the differences between get() and load() methods in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q12-how-does-hibernate-ensure-data-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q12. How does Hibernate ensure data integrity?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q13-what-is-the-n1-select-problem-in-hibernate-how-can-it-be-prevented" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q13. What is the N+1 SELECT problem in Hibernate? How can it be prevented?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q14-explain-the-role-of-the-entity-annotation-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q14. Explain the role of the @Entity annotation in Hibernate.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q15-what-is-cascading-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q15. What is cascading in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q16-what-is-a-composite-key-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q16. What is a Composite Key in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q17-how-does-hibernate-handle-sql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q17. How does Hibernate handle SQL Injection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q18-what-is-lazy-loading-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q18. What is Lazy Loading in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q19-how-can-you-achieve-concurrency-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q19. How can you achieve concurrency in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q20-what-is-an-optimistic-locking-in-hibernate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q20. What is an optimistic locking in Hibernate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q21-you-have-noticed-that-your-hibernate-application-is-running-slowly-when-fetching-data-from-a-database-with-many-relationships-what-strategy-could-you-use-to-improve-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q21. You have noticed that your Hibernate application is running slowly when fetching data from a database with many relationships. What strategy could you use to improve performance?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q22-how-do-you-handle-a-hibernate-session-in-a-web-application-to-ensure-that-it-is-properly-closed-avoiding-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q22. How do you handle a Hibernate session in a web application to ensure that it is properly closed, avoiding memory leaks?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q23-during-a-transaction-an-error-occurs-after-several-database-operations-have-been-successfully-executed-how-does-hibernate-ensure-data-integrity-in-this-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q23. During a transaction, an error occurs after several database operations have been successfully executed. How does Hibernate ensure data integrity in this situation?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q24-you-need-to-add-auditing-features-to-track-changes-in-entity-data-what-hibernate-feature-would-you-use-to-achieve-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q24. You need to add auditing features to track changes in entity data. What Hibernate feature would you use to achieve this?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q25-you-are-working-with-a-legacy-database-where-the-table-and-column-names-do-not-follow-your-standard-naming-conventions-how-can-you-map-these-tables-without-modifying-the-existing-database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q25. You are working with a legacy database where the table and column names do not follow your standard naming conventions. How can you map these tables without modifying the existing database schema?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h3 id="1-what-is-spring-data-jpa"><strong>1) What is Spring Data JPA?</strong></h3>
+<p>Spring Data JPA is part of the Spring Data project, which aims to simplify data access in Spring-based applications. It provides a layer of abstraction on top of JPA (Java Persistence API) to reduce boilerplate code and simplify database operations, allowing developers to focus more on business logic rather than database interaction details.</p>
+<h3 id="2-explain-features-of-spring-data-jpa"><strong>2) Explain features of Spring Data JPA?</strong></h3>
+<p>Spring Data JPA offers features such as automatic repository creation, query method generation, pagination support, and support for custom queries. It provides a set of powerful CRUD methods out-of-the-box, simplifies the implementation of JPA repositories, and supports integration with other Spring projects like Spring Boot and Spring MVC.</p>
+<p><strong>3) How to create a custom Repository class in Spring JPA?</strong></p>
+<p>To create a custom repository class in Spring JPA, you can define an interface that extends the JpaRepository interface and add custom query methods. For example:</p>
+<p><em>public interface CustomRepository<T, ID> extends JpaRepository<T, ID> {</em></p>
+<p><em>// Add custom query methods here</em></p>
+<p><em>}</em></p>
+<p><strong>4) Difference between CRUDRepository and JPARepository.</strong></p>
+<p>CrudRepository provides basic CRUD operations, while JpaRepository provides JPA-specific methods like flushing changes to the database, deleting records in a batch, and more. JpaRepository extends CrudRepository, so it inherits all its methods and adds JPA-specific ones.</p>
+<p><strong>5) Write a custom query in Spring JPA?</strong></p>
+<p>We can write custom queries using the @Query annotation. For example: <em>@Query(“SELECT u FROM User u WHERE u.firstName = :firstName”) List findByFirstName(@Param(“firstName”) String firstName);</em></p>
+<p><strong>6) What is the purpose of save() method in CrudRepository?</strong></p>
+<p>The save() method in CrudRepository is used to save or update an entity. If the entity has a primary key, Spring Data JPA will determine whether to perform an insert or an update operation based on whether the entity already exists in the database.</p>
+<p><strong>7) What is the use of @Modifying annotation?</strong></p>
+<p>The <code>@Modifying</code> annotation is used in conjunction with query methods to indicate that the query modifies the state of the database. It is typically used with update or delete queries to inform the persistence provider that the query should be executed as a write operation, ensuring that the changes are propagated to the database.</p>
+<p><strong>8) Difference between <code>findById()</code> and <code>getOne()</code>.</strong></p>
+<p>findById() returns an Optional containing the entity with the given ID, fetching it from the database immediately. getOne() returns a proxy for the entity with the given ID, allowing lazy loading of its state. If the entity is not found, getOne() throws an EntityNotFoundException.</p>
+<h3 id="9-use-of-temporal-annotation"><strong>9) Use of @Temporal annotation.</strong></h3>
+<p>The <code>@Temporal</code> annotation is used to specify the type of temporal data (date, time, or timestamp) to be stored in a database column. It is typically applied to fields of type java.util.Date or</p>
+<p>java.util.Calendar to specify whether they should be treated as DATE, TIME, or TIMESTAMP.</p>
+<h3 id="10-write-a-query-method-for-sorting-in-spring-data-jpa"><strong>10) Write a query method for sorting in Spring Data JPA.</strong></h3>
+<p>We can specify sorting in query methods by adding the OrderBy keyword followed by the entity attribute and the sorting direction (ASC or DESC). For example:</p>
+<p><em>List findByOrderByLastNameAsc();</em></p>
+<h3 id="11-explain-transactional-annotation-in-spring"><strong>11) Explain @Transactional annotation in Spring.</strong></h3>
+<p>The @Transactional annotation is used to mark a method, class, or interface as transactional. It ensures that the annotated method runs within a transaction context, allowing multiple database operations to be treated as a single atomic unit. If an exception occurs, the transaction will be rolled back, reverting all changes made within the transaction.</p>
+<h3 id="12-what-is-the-difference-between-fetchtypeeager-and-fetchtypelazy"><strong>12) What is the difference between FetchType.Eager and FetchType.Lazy?</strong></h3>
+<p>FetchType.Eager specifies that the related entities should be fetched eagerly along with the main entity, potentially leading to performance issues due to loading unnecessary data. FetchType.Lazy specifies that the related entities should be fetched lazily on demand, improving performance by loading them only when needed.</p>
+<h3 id="13-use-of-id-annotation"><strong>13) Use of @Id annotation.</strong></h3>
+<p>The @Id annotation is used to specify the primary key of an entity. It marks a field or property as the unique identifier for the entity, allowing the persistence provider to recognize and manage entity instances.</p>
+<h3 id="14-how-will-you-create-a-composite-primary-key-in-spring-jpa"><strong>14) How will you create a composite primary key in Spring JPA.</strong></h3>
+<p>To create a composite primary key in Spring JPA, we can define a separate class to represent the composite key and annotate it with @Embeddable. Then, in the entity class, use @EmbeddedId to reference the composite key class.</p>
+<h3 id="15-what-is-the-use-of-enablejparepositories-method"><strong>15) What is the use of @EnableJpaRepositories method?</strong></h3>
+<p>The @EnableJpaRepositories annotation is used to enable JPA repositories in a Spring application. It specifies the base package(s) where Spring should look for repository interfaces and configures the necessary beans to enable Spring Data JPA functionality.</p>
+<h3 id="16-what-are-the-rules-to-follow-to-declare-custom-methods-in-repository"><strong>16) What are the rules to follow to declare custom methods in Repository.</strong></h3>
+<p>Custom methods in a repository interface must follow a specific naming convention to be</p>
+<p>automatically implemented by Spring Data JPA. The method name should start with a prefix such as findBy, deleteBy, or countBy, followed by the property names of the entity and optional keywords like And, Or, OrderBy, etc.</p>
+<h3 id="17-explain-querybyexample-in-spring-data-jpa"><strong>17) Explain QueryByExample in spring data jpa.</strong></h3>
+<p>Query By Example (QBE) is a feature in Spring Data JPA that allows you to create dynamic queries based on the example entity provided. It generates a query using the non-null properties of the example entity as search criteria, making it easy to perform flexible and dynamic searches without writing custom query methods.</p>
+<h3 id="18-what-is-pagination-and-how-to-implement-pagination-in-spring-data"><strong>18) What is pagination and how to implement pagination in spring data?</strong></h3>
+<p>Pagination is a technique used to divide large result sets into smaller, manageable chunks called pages. In Spring Data, pagination can be implemented using Pageable as a method parameter in repository query methods. Spring Data automatically handles the pagination details, allowing you to specify the page number, page size, sorting, etc.</p>
+<h3 id="19-explain-few-crudrepository-methods"><strong>19) Explain few CrudRepository methods.</strong></h3>
+<p>Some commonly used methods in CrudRepository include save() to save or update entities, findById() to find entities by their primary key, deleteById() to delete entities by their primary key, findAll() to retrieve all entities, and count() to count the number of entities.</p>
+<h3 id="20-difference-between-delete-and-deleteinbatch-methods"><strong>20) Difference between delete() and deleteInBatch() methods.</strong></h3>
+<p>delete() method deletes a single entity from the database, while deleteInBatch() method deletes all entities passed as a collection in a single batch operation. The latter is more efficient for deleting multiple entities at once, as it reduces the number of database round trips.</p>
+<h3 id="21-you-need-to-execute-a-complex-query-that-involves-multiple-tables-and-conditional-logic-how-do-you-implement-this-in-spring-jpa"><strong>21) You need to execute a complex query that involves multiple tables and conditional logic. How do you implement this in Spring JPA?</strong></h3>
+<p>In Spring JPA, for complex queries involving multiple tables and conditions, I use the @Query annotation to define JPQL or native SQL queries directly on the repository methods. This allows for flexible and powerful querying capabilities beyond the standard CRUD methods provided by Spring Data JPA.</p>
+<h3 id="22-your-application-requires-the-insertion-of-thousands-of-records-into-the-database-at-once-how-do-you-optimize-this-batch-process-using-spring-jpa"><strong>22) Your application requires the insertion of thousands of records into the database at once. How do you optimize this batch process using Spring JPA?</strong></h3>
+<p>To optimize batch processing in Spring JPA, I enable batch inserts and updates by configuring spring.jpa.properties.hibernate.jdbc.batch_size in application.properties. This setting allows Hibernate to group SQL statements together, reducing database round trips and improving performance significantly.</p>
+<h3 id="23-you-have-entities-with-bidirectional-relationships-how-do-you-ensure-these-are-correctly-managed-in-spring-jpa-to-avoid-common-issues-like-infinite-recursion"><strong>23) You have entities with bidirectional relationships. How do you ensure these are correctly managed in Spring JPA to avoid common issues like infinite recursion?</strong></h3>
+<p>In Spring JPA, when dealing with bidirectional relationships, I manage them by correctly setting up the @ManyToOne, @OneToMany, or @ManyToMany annotations with appropriate mappedBy attributes. To prevent issues like infinite recursion during serialization, I use</p>
+<p>@JsonManagedReference and @JsonBackReference annotations or DTOs to control JSON output.</p>
+<h3 id="24-how-do-you-handle-schema-migration-in-a-project-using-spring-jpa-when-the-schema-changes-due-to-business-requirements"><strong>24) How do you handle schema migration in a project using Spring JPA when the schema changes due to business requirements?</strong></h3>
+<p>For schema migrations in Spring JPA projects, I integrate tools like Liquibase or Flyway. These tools are configured in Spring Boot applications to automatically apply database schema changes as part of the deployment process, ensuring the database schema is always in sync with the application’s requirements.</p>
+<h3 id="25-you-are-experiencing-performance-issues-with-certain-frequently-accessed-data-how-can-you-implement-caching-in-spring-jpa-to-improve-performance"><strong>25) You are experiencing performance issues with certain frequently accessed data. How can you implement caching in Spring JPA to improve performance?</strong></h3>
+<p>To implement caching in Spring JPA, I use the Spring Cache abstraction with a cache provider like EHCache or Redis. I annotate frequently accessed data retrieval methods in the repository with</p>
+<p><code>@Cacheable</code>. This stores the result in the cache for subsequent requests, reducing the need to query the database repeatedly and thus improving performance.</p>
+<h1 id="hibernate-most-asked-interview-questions"><strong>Hibernate Most Asked Interview Questions</strong></h1>
+<h3 id="q1-what-is-hibernate">Q1. What is Hibernate?</h3>
+<p>Hibernate is an open-source, lightweight, ORM (Object-Relational Mapping) tool in Java which is used to map Java classes to database tables and to convert Java data types to SQL data types.</p>
+<h3 id="q2-what-are-the-core-components-of-hibernate">Q2. What are the core components of Hibernate?</h3>
+<p>Core components of Hibernate include SessionFactory, Session, Transaction, ConnectionProvider, and TransactionFactory. These components are fundamental in performing database operations through Hibernate framework.</p>
+<h3 id="q3-explain-the-role-of-the-sessionfactory-in-hibernate">Q3. Explain the role of the SessionFactory in Hibernate.</h3>
+<p>SessionFactory is a factory class used to create Session objects. It is a heavyweight object meant to be created once per datasource or per database. It is used to open new sessions for interacting with the database.</p>
+<h3 id="q4-what-is-a-session-in-hibernate">Q4. What is a Session in Hibernate?</h3>
+<p>A Session in Hibernate is a single-threaded, short-lived object representing a conversation between the application and the database. It acts as a staging area for changes to be persisted in the database.</p>
+<h3 id="q5-how-does-hibernate-manage-transactions">Q5. How does Hibernate manage transactions?</h3>
+<p>Hibernate manages transactions via its Transaction interface. Transactions in Hibernate are handled through a combination of the Java Transaction API (JTA) and JDBC. Hibernate integrates with the transaction management mechanism of the underlying platform.</p>
+<h3 id="q6-what-is-hql-hibernate-query-language">Q6. What is HQL (Hibernate Query Language)?</h3>
+<p>HQL stands for Hibernate Query Language, a portable, database-independent query language defined by Hibernate. It is object-oriented, understanding notions like inheritance, polymorphism, and association.</p>
+<h3 id="q7-what-is-the-criteria-api-in-hibernate">Q7. What is the Criteria API in Hibernate?</h3>
+<p>The Criteria API is a programmable, object-oriented API in Hibernate used to define complex queries against database entities. It is used to build up a criteria query object programmatically where you can apply filtration rules and logical conditions.</p>
+<h3 id="q8-explain-the-concept-of-object-states-in-hibernate">Q8. Explain the concept of Object States in Hibernate.**</h3>
+<p>In Hibernate, objects can exist in one of three states: </p>
+<ol>
+<li><strong>transient</strong> (not associated with any session), </li>
+<li><strong>persistent</strong> (associated with a session), and </li>
+<li><strong>detached</strong> (was once associated with a session but then got detached).</li>
+</ol>
+<h3 id="q9-what-is-the-purpose-of-the-configuration-class-in-hibernate">Q9. What is the purpose of the Configuration class in Hibernate?**</h3>
+<p>The Configuration class in Hibernate is used to configure settings from hibernate.cfg.xml file. It bootstraps the Hibernate and allows the application to specify properties and mapping documents to be used when creating a SessionFactory.</p>
+<h3 id="q10-describe-the-second-level-cache-in-hibernate">Q10. Describe the Second Level Cache in Hibernate.</h3>
+<p>The Second Level Cache in Hibernate is an optional cache that can store data across sessions. It is used to enhance performance by storing entities in cache memory, reducing database access.</p>
+<h3 id="q11-what-are-the-differences-between-get-and-load-methods-in-hibernate">Q11. What are the differences between get() and load() methods in Hibernate?</h3>
+<p>The <code>get()</code> method in Hibernate retrieves the object if it exists in the database; otherwise, it returns null. </p>
+<p>The <code>load()</code> method also retrieves the object, but if it doesn’t exist, it throws an <code>ObjectNotFoundException</code>. <code>load()</code> can use a proxy to fetch the data lazily.</p>
+<h3 id="q12-how-does-hibernate-ensure-data-integrity">Q12. How does Hibernate ensure data integrity?</h3>
+<p>Hibernate ensures data integrity by managing database transactions, providing isolation levels, and supporting concurrency strategies. It also integrates with database constraints and can enforce application-level integrity using validators.</p>
+<h3 id="q13-what-is-the-n1-select-problem-in-hibernate-how-can-it-be-prevented">Q13. What is the N+1 SELECT problem in Hibernate? How can it be prevented?</h3>
+<p>The N+1 SELECT problem in Hibernate occurs when an application makes one query to retrieve N parent records and then makes N additional queries to retrieve related child objects. It can be prevented using strategies like join fetching, batch fetching, or subselect fetching to minimize the number of queries executed.</p>
+<h3 id="q14-explain-the-role-of-the-entity-annotation-in-hibernate">Q14. Explain the role of the @Entity annotation in Hibernate.</h3>
+<p>The <code>@Entity</code> annotation in Hibernate is used to mark a class as an entity, which means it is a mapped object and its instance can be persisted to the database.</p>
+<h3 id="q15-what-is-cascading-in-hibernate">Q15. What is cascading in Hibernate?</h3>
+<p><strong>Cascading in Hibernate is the ability to propagate the operations from a parent entity to its associated child entities.</strong> It is used to manage the state transitions of associated objects automatically. CascadeType can be used to specify which operations are cascaded.</p>
+<h3 id="q16-what-is-a-composite-key-in-hibernate">Q16. What is a Composite Key in Hibernate?</h3>
+<p>A Composite Key in Hibernate is a primary key made up of multiple columns. In Hibernate, a composite key can be represented using a separate class annotated with @Embeddable or @EmbeddedId to represent this composite key.</p>
+<h3 id="q17-how-does-hibernate-handle-sql-injection">Q17. How does Hibernate handle SQL Injection?</h3>
+<p>Hibernate handles SQL Injection by using prepared statements that automatically escape SQL syntax. Additionally, using HQL or Criteria API also protects against SQL injection as they translate a query from HQL into SQL in a way that uses parameterized queries.</p>
+<h3 id="q18-what-is-lazy-loading-in-hibernate">Q18. What is Lazy Loading in Hibernate?</h3>
+<p>Lazy Loading in Hibernate is a concept where an entity or collection of entities is not loaded until it is accessed for the first time. This is a performance optimization technique to defer the loading of objects until they are needed.</p>
+<h3 id="q19-how-can-you-achieve-concurrency-in-hibernate">Q19. How can you achieve concurrency in Hibernate?</h3>
+<p>Concurrency in Hibernate can be achieved using versioning and locking mechanisms. Hibernate supports optimistic and pessimistic locking strategies to handle concurrent modifications of data effectively.</p>
+<h3 id="q20-what-is-an-optimistic-locking-in-hibernate">Q20. What is an optimistic locking in Hibernate?</h3>
+<p>Optimistic locking in Hibernate is a technique to ensure that a record is not updated by more than one transaction at the same time by using a version field in the database table. It checks the version of a record at the time of fetching and before committing an update to ensure consistency.</p>
+<h3 id="q21-you-have-noticed-that-your-hibernate-application-is-running-slowly-when-fetching-data-from-a-database-with-many-relationships-what-strategy-could-you-use-to-improve-performance">Q21. You have noticed that your Hibernate application is running slowly when fetching data from a database with many relationships. What strategy could you use to improve performance?</h3>
+<p>To optimize query performance in Hibernate, I would consider using lazy loading for entity relationships. This means Hibernate will only fetch related entities when they are explicitly accessed, not at the time of fetching the parent entity. Additionally, I might use batch fetching and adjust the fetch sizes in the configuration to reduce the number of database queries.</p>
+<h3 id="q22-how-do-you-handle-a-hibernate-session-in-a-web-application-to-ensure-that-it-is-properly-closed-avoiding-memory-leaks">Q22. How do you handle a Hibernate session in a web application to ensure that it is properly closed, avoiding memory leaks?</h3>
+<p>In our web application, we manage Hibernate sessions by binding a session to the current thread using the CurrentSessionContext interface. We typically configure session opening and closing in a servlet filter or interceptors, ensuring that each request opens a session and ends by closing the session, thus preventing memory leaks.</p>
+<h3 id="q23-during-a-transaction-an-error-occurs-after-several-database-operations-have-been-successfully-executed-how-does-hibernate-ensure-data-integrity-in-this-situation">Q23. During a transaction, an error occurs after several database operations have been successfully executed. How does Hibernate ensure data integrity in this situation?</h3>
+<p>Hibernate ensures data integrity by using transactions. If an error occurs during the transaction, hibernate rolls back all operations to the state before the transaction began, using either database transactions or the Java Transaction API (JTA). This rollback mechanism prevents partial data modifications that could lead to data inconsistency.</p>
+<h3 id="q24-you-need-to-add-auditing-features-to-track-changes-in-entity-data-what-hibernate-feature-would-you-use-to-achieve-this">Q24. You need to add auditing features to track changes in entity data. What Hibernate feature would you use to achieve this?</h3>
+<p>To implement auditing in Hibernate, I would use Hibernate Envers. It’s a Hibernate module that allows for versioning of entity classes. By simply annotating our entity classes with @Audited, we can keep track of changes to their state, automatically storing revisions in separate tables.</p>
+<h3 id="q25-you-are-working-with-a-legacy-database-where-the-table-and-column-names-do-not-follow-your-standard-naming-conventions-how-can-you-map-these-tables-without-modifying-the-existing-database-schema">Q25. You are working with a legacy database where the table and column names do not follow your standard naming conventions. How can you map these tables without modifying the existing database schema?</h3>
+<p>In Hibernate, I handle legacy databases by customizing the ORM mapping. I use the @Table and @Column annotations to map entity classes to the specific table names and column names defined in the legacy database. This allows us to map the entities accurately to the database schema without any changes to the database itself.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../SpringBootQues/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Spring-Boot">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Spring-Boot
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../SpringSecurity/" class="md-footer__link md-footer__link--next" aria-label="Next: Spring-Security">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Spring-Security
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2024 Pratap Adhav
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hi-pratap" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/squidfunk" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
