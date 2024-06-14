@@ -1,14 +1,14 @@
 # **Spring Framework Most Asked Interview Questions and Answers**
 
-### Q145. **What is Spring?**
+### Q1. **What is Spring?**
 
 Spring is a Java framework that helps in building enterprise applications. It is a powerful toolkit for making software using Java. It’s like having a set of tools that help developers build programs more easily. With Spring, tasks like connecting to databases or managing different parts of a program become simpler. It’s a big help for developers because it takes care of many technical details, allowing them to focus on creating great software. It provides support for dependency injection, aspect-oriented programming, and various other features.
 
-### Q146. **What are the advantages of the Spring framework?**
+### Q2. **What are the advantages of the Spring framework?**
 
 The Spring framework has many benefits. It helps manage objects in a program, making the code simpler and easier to write. It supports transactions, which helps in managing database operations smoothly. It also integrates well with other technologies and makes testing easier. With tools like Spring Boot and Spring Cloud, developers can quickly create, deploy, and maintain scalable and reliable applications.
 
-### Q147. **What are the modules of the Spring framework?**
+### Q3. **What are the modules of the Spring framework?**
 
 The Spring framework has many modules, such as Core for managing objects, AOP for adding extra features, Data Access for working with databases, Web for creating web applications, Security for handling security, and Test for making testing easier. There are also modules for messaging, transactions, and cloud support. Each module helps developers build strong and easy-to-maintain applications.
 
@@ -16,11 +16,11 @@ The Spring framework has many modules, such as Core for managing objects, AOP fo
 
 Spring is a framework that helps build Java applications with many tools for different tasks. Spring Boot makes using Spring easier by providing ready-made setups, reducing the need for a lot of extra code. It includes an embedded server, so we can quickly start and run applications, making development faster and simpler.
 
-### Q148. **What Is a Spring Bean?**
+### Q4. **What Is a Spring Bean?**
 
 A Spring Bean is an object that is created and managed by the Spring framework. It is a key part of a Spring application, and the framework handles the creation and setup of these objects. Beans allow our application components to work together easily, making our code simpler to manage and test.
 
-### Q149. **What is IOC and DI?**
+### Q5. **What is IOC and DI?**
 
 Inversion of Control (IoC) is a concept where the framework or container takes control of the flow of a program. Dependency Injection (DI) is a way to implement IoC, where the necessary objects are provided to a class instead of the class creating them itself. This makes the code easier to manage, test, and change.
 
@@ -37,15 +37,15 @@ Dependency Injection is a design pattern used to implement IoC. It is a techniqu
     DI promotes modularity, testability, and maintainability by making classes more reusable and easier to mock or substitute during testing.
     
 
-### Q150. **What is the role of IOC container in Spring?**
+### Q6. **What is the role of IOC container in Spring?**
 
 The IoC container in Spring manages the creation and setup of objects. It provides the required dependencies to these objects, making the code easier to manage and change. The container automatically connects objects and their dependencies, helping developers build applications in a more organized and efficient way.
 
-### Q151. **What are the types of IOC container in Spring?**
+### Q7. **What are the types of IOC container in Spring?**
 
 In Spring, there are two main types of IoC containers: BeanFactory and ApplicationContext. BeanFactory is the basic container that handles creating and managing objects. ApplicationContext is more advanced, adding features like event handling and easier integration with Spring’s tools. Most developers prefer ApplicationContext because it offers more capabilities and is easier to use.
 
-### Q152. **What is the use of `@Configuration` and `@Bean` annotations in Spring?**
+### Q8. **What is the use of `@Configuration` and `@Bean` annotations in Spring?**
 
 `@Configuration` indicates that a class contains `@Bean` definitions, and Spring IoC container can use it as a source of bean definitions. `@Bean` is used on methods to define beans managed by the Spring container. These methods are called by Spring to obtain bean instances.
 
@@ -57,7 +57,7 @@ The best way to inject beans in Spring is using constructor injection. It ensure
 
 Constructor injection gives dependencies to an object when it is created, ensuring they are ready to use immediately. Setter injection gives dependencies through setter methods after the object is created, allowing changes later. Constructor injection makes sure all needed dependencies are available right away, while setter injection allows for more flexibility in changing or adding optional dependencies later.
 
-### Q153. **What are the different bean scopes in Spring?**
+### Q9. **What are the different bean scopes in Spring?**
 
 In Spring, bean scopes define how long a bean lives. The main types are 
 
@@ -74,7 +74,7 @@ In Spring, bean scopes define how long a bean lives. The main types are
 
 Use Singleton scope when we need just one shared instance of a bean for the whole application, like for configuration settings. Use Prototype scope when we need a new instance every time the bean is requested, such as for objects that hold user-specific data or have different states for different uses.
 
-### Q154. **What Is the Default Bean Scope in Spring Framework?**
+### Q10. **What Is the Default Bean Scope in Spring Framework?**
 
 *The default bean scope in the Spring Framework is singleton*. This means that only one instance of the bean is created and shared across the entire Spring application context.
 
@@ -82,7 +82,7 @@ Use Singleton scope when we need just one shared instance of a bean for the whol
 
 No, singleton beans in Spring are not thread-safe by default. Because they are shared by multiple parts of the application at the same time, we need to add extra code to make them safe for use by multiple threads. This usually means using synchronized methods or thread-safe data structures.
 
-### Q155. **Can We Have Multiple Spring Configuration Files in One Project?**
+### Q11. **Can We Have Multiple Spring Configuration Files in One Project?**
 
 Yes, we can have multiple Spring configuration files in one project. This allows us to organize and manage our bean definitions and configurations more effectively by separating them into different files based on their purpose or module. We can then load these configuration files into our application context as needed.
 
@@ -90,15 +90,15 @@ Yes, we can have multiple Spring configuration files in one project. This allows
 
 I have used the *Singleton Pattern* to ensure a single instance of beans, which helps manage resources efficiently. I have also used the *Factory Pattern* to create bean instances, making it easier to manage and configure objects in a flexible way.
 
-### Q156. **How Does the Scope Prototype Work?**
+### Q12. **How Does the Scope Prototype Work?**
 
 The prototype scope in Spring means that a new instance of a bean is created each time it is needed. Unlike the singleton scope, which uses the same instance, the prototype scope gives a fresh, separate bean for every request. This is useful when we need a new instance for each user or operation.
 
-### Q157. **What are Spring Profiles and how do you use them?**
+### Q13. **What are Spring Profiles and how do you use them?**
 
 Spring Profiles provide a way to segregate parts of our application configuration and make it only available in certain environments. They can be activated via the `spring.profiles.active` property in application properties, JVM system properties, or programmatically. Use `@Profile` annotation to associate beans with profiles.
 
-### Q158. **What is Spring WebFlux and how is it different from Spring MVC?**
+### Q14. **What is Spring WebFlux and how is it different from Spring MVC?**
 
 Spring WebFlux is a part of Spring 5 that supports reactive programming. It is a non-blocking, reactive framework built on Project Reactor. Unlike Spring MVC, which is synchronous and blocking, WebFlux is asynchronous and non-blocking, making it suitable for applications that require high concurrency with fewer resources.
 
@@ -126,7 +126,7 @@ I would:
 - Implement stateless beans where possible to avoid shared state.
 - Use concurrent utilities from `java.util.concurrent`
 
-# **Basic Spring Boot Interview Questions and Answers**
+## **Basic Spring Boot Interview Questions and Answers**
 
 ### **1) What is Spring Boot?**
 
@@ -386,7 +386,7 @@ Spring Boot decides which embedded server to use based on the order of dependenc
 
 To disable the default server and enable a different one in Spring Boot, *exclude the default server dependency in the pom.xml* or build.gradle file and add the dependency for the desired server. For example, to switch from Tomcat to Jetty, exclude the Tomcat dependency and include the Jetty dependency in our project configuration.
 
-# **Spring Boot Important Annotations**
+## **Spring Boot Important Annotations**
 
 ### 1.**@SpringBootApplication**:
 
@@ -472,25 +472,25 @@ The `@Scheduled` annotation in Spring triggers methods to run at fixed intervals
 
 `@EnableScheduling` is an annotation in Spring Framework used to enable scheduling capabilities for methods within a Spring application. It allows methods annotated with `@Scheduled` to be executed based on specified time intervals or cron expressions.
 
-# Spring MVC Most Asked Interview Questions:
+## Spring MVC Most Asked Interview Questions:
 
-### Q247. **What is Spring MVC?**
+### Q15. **What is Spring MVC?**
 
 Spring MVC is a part of the Spring framework used to create web applications. It helps organize the application into three parts: Model (data), View (user interface), and Controller (logic). This separation makes the app easier to manage. Spring MVC also provides tools for handling user requests, checking data, and connecting different parts of the app, making web development simpler and more efficient.
 
-### Q248. **What are the core components of Spring MVC?**
+### Q16. **What are the core components of Spring MVC?**
 
 The core components of Spring MVC include DispatcherServlet, Controller, Model, View, and ViewResolver. DispatcherServlet handles incoming requests and directs them to the right Controller. Controllers process these requests, interact with the Model to get or update data, and decide which View to show. The ViewResolver matches the View name to the actual View, which displays the data to the user.
 
-### Q249. **Describe the lifecycle of a Spring MVC request.**
+### Q17. **Describe the lifecycle of a Spring MVC request.**
 
 In Spring MVC, when a user makes a request, DispatcherServlet receives it first and finds the right Controller. The Controller processes the request, works with the Model to get or update data, and returns the name of a View. DispatcherServlet then uses ViewResolver to find the correct View. Finally, the View creates the response, showing the data to the user.
 
-### Q250. **What role does the DispatcherServlet play in this lifecycle?**
+### Q18. **What role does the DispatcherServlet play in this lifecycle?**
 
 The DispatcherServlet is the main part of Spring MVC. It gets all incoming requests, finds the right Controller to handle them, and manages the flow. After the Controller processes the request and returns a View name, DispatcherServlet uses ViewResolver to find the correct View. Then, it shows the View and sends the response back to the user.
 
-### Q251. **How are different components like controllers and view resolvers integrated during a request?**
+### Q19. **How are different components like controllers and view resolvers integrated during a request?**
 
 In Spring MVC, when a request comes in, DispatcherServlet finds the right Controller to handle it. The Controller processes the request and decides which View to show.
 
@@ -498,23 +498,23 @@ DispatcherServlet then uses ViewResolver to find the correct View. The View is t
 
 and sent back to the user as a response. DispatcherServlet manages how these parts work together.
 
-### Q252. **Can you explain the role of the WebApplicationContext?**
+### Q20. **Can you explain the role of the WebApplicationContext?**
 
 The WebApplicationContext in Spring MVC is a special container for web applications. It stores and manages web-specific components like controllers and view resolvers. When a request comes in, DispatcherServlet uses the WebApplicationContext to find and set up these components, making sure they work together to handle the request and create the response.
 
-### Q253. **How do you configure Spring MVC in a web application?**
+### Q21. **How do you configure Spring MVC in a web application?**
 
 To set up Spring MVC in a web application, we first need to add a dispatcher servlet in the web.xml file. This servlet directs the incoming requests to our controllers. Next, we can create a file called applicationContext.xml. In this file, we list all the components of our application, such as controllers and services. we use annotations like @RequestMapping to connect URLs to controller methods. Lastly, set up a view resolver to link the names of views to the actual files, like JSPs.
 
-### Q254. **What is the role of the web.xml file or Java Config in setting up Spring MVC?**
+### Q22. **What is the role of the web.xml file or Java Config in setting up Spring MVC?**
 
 The web.xml file or Java Config sets up Spring MVC by defining the DispatcherServlet, which handles incoming requests. In web.xml, we set up the servlet and its URL mapping. In Java Config, we use a Java class to register DispatcherServlet. Both methods start the Spring application, connecting controllers, views, and other parts to manage web requests and responses.
 
-### Q255. **Can you describe how to set up a Spring MVC application without using web.xml?**
+### Q23. **Can you describe how to set up a Spring MVC application without using web.xml?**
 
 To set up a Spring MVC application without web.xml, create a class that implements WebApplicationInitializer. In this class, register DispatcherServlet and configure it with a Spring configuration class annotated with @Configuration and @EnableWebMvc. This Java setup starts the Spring application and connects requests to the right controllers and views.
 
-### Q256. **How do servlets and listeners contribute to the configuration?**
+### Q24. **How do servlets and listeners contribute to the configuration?**
 
 Servlets and listeners help set up and manage a web application. Servlets, like
 
@@ -522,19 +522,19 @@ DispatcherServlet, handle incoming requests and direct them to the right parts o
 
 everything is properly configured and ready to use. Together, they keep the web application running smoothly.
 
-### Q257. **Explain the purpose of the @RequestMapping annotation.**
+### Q25. **Explain the purpose of the @RequestMapping annotation.**
 
 The @RequestMapping annotation in Spring MVC is used to match web requests to specific methods in a controller. It sets the URL patterns and HTTP methods (like GET or POST) that the method handles. This helps direct incoming requests to the right method based on the URL and request type, making it easier to manage web requests and responses.
 
-### Q258. **How can you define method-level mappings within a controller?**
+### Q26. **How can you define method-level mappings within a controller?**
 
 To define method-level mappings in a controller, use the @RequestMapping annotation on each method. Specify the URL pattern and the HTTP method (like GET or POST) the method should handle. This allows different methods in the same controller to handle different URLs or request types, making it easy to manage how requests are processed.
 
-### Q259. **What are the attributes available in @RequestMapping?**
+### Q27. **What are the attributes available in @RequestMapping?**
 
 The `@RequestMapping` annotation in Spring MVC has several attributes to set up web requests. These include value or path to define the URL, method to specify the HTTP method (like GET or POST), params for request parameters, headers for HTTP headers, consumes to indicate the content type the method can handle, produces for the response content type, and name for naming the mapping.
 
-### Q260. **How does @RequestMapping handle different types of HTTP requests?**
+### Q28. **How does @RequestMapping handle different types of HTTP requests?**
 
 `@RequestMapping` handles different types of HTTP requests using the method attribute. This attribute lets us specify which HTTP method (like GET, POST, PUT, DELETE) the method should handle. For example, 
 
@@ -542,7 +542,7 @@ The `@RequestMapping` annotation in Spring MVC has several attributes to set up 
 
  `@RequestMapping(value = “/example”, method = RequestMethod.POST)` handles POST requests. This allows one URL to support different request types.
 
-### Q261. **What are the differences between @Controller and @RestController annotations?**
+### Q29. **What are the differences between @Controller and @RestController annotations?**
 
 `@Controller` and `@RestController` are used in Spring MVC. `@Controller` is for web controllers that return web pages and needs `@ResponseBody` on each method to send data like JSON.
 
@@ -554,27 +554,27 @@ The `@RequestMapping` annotation in Spring MVC has several attributes to set up 
 
 Use `@RestController` when we need to create APIs that send data like JSON or XML directly to clients. It makes things easier by combining `@Controller and @ResponseBody`, so we don’t need to add @ResponseBody to each method. This is ideal for creating web services for front-end applications. Use `@Controller` when our application needs to return web pages or views.
 
-### Q262. **How does the response handling differ between these two annotations?**
+### Q30. **How does the response handling differ between these two annotations?**
 
 With @Controller, we return web pages or views, and we need @ResponseBody on methods to send JSON data. With @RestController, we don’t need @ResponseBody because it automatically sends JSON or XML responses. @Controller is used for traditional web apps with web pages, while @RestController is used for web services that send data directly to clients.
 
-### Q263. **What are the implications of using @RestController for data serialization?**
+### Q31. **What are the implications of using @RestController for data serialization?**
 
 Using @RestController means our data is automatically turned into JSON or XML, making it easier to create APIs. We don’t need to add @ResponseBody to each method, which simplifies our code. This is great for sending data directly to clients, but it also means we can’t easily return web pages or views from the same controller.
 
-### Q264. **How do you manage form data in Spring MVC?**
+### Q32. **How do you manage form data in Spring MVC?**
 
 In Spring MVC, manage form data using @ModelAttribute to bind form fields to a model object. Create a method in our controller with @PostMapping to handle form submission.
 
 This method can accept the model object as a parameter. Use @RequestParam to bind individual fields if needed. For validation, use @Valid and a Binding Result object to check for errors and handle them accordingly.
 
-### Q265. **How can you handle form submission in Spring MVC?**
+### Q33. **How can you handle form submission in Spring MVC?**
 
 To handle form submission in Spring MVC, use @PostMapping in our controller to create a method for processing the form. Use @ModelAttribute to bind form fields to a model object. For validation, add @Valid to the model object and include a BindingResult parameter for handling errors. We can also use @RequestParam for individual fields. After
 
 processing, return a view name or redirect to another URL.
 
-### Q266. **What is the role of the @ModelAttribute annotation?**
+### Q34. **What is the role of the @ModelAttribute annotation?**
 
 The @ModelAttribute annotation in Spring MVC binds form data to a model object, making
 
@@ -586,7 +586,7 @@ different controller methods. This makes data handling easier and keeps our cont
 
 clean.
 
-### Q267. **Can you describe form validation in Spring MVC?**
+### Q35. **Can you describe form validation in Spring MVC?**
 
 Form validation in Spring MVC uses `@Valid` on a model object to apply rules like `@NotNull`,
 
@@ -596,7 +596,7 @@ object and a BindingResult to check for errors. If there are errors, the method 
 
 form view with error messages, ensuring the data is correct and giving feedback to the user.
 
-### Q268. **What is ViewResolver in Spring MVC and how does it work?**
+### Q36. **What is ViewResolver in Spring MVC and how does it work?**
 
 In Spring MVC, a ViewResolver maps view names from controllers to actual view files, like
 
@@ -606,7 +606,7 @@ create the full path to the file, and then renders the view. This helps separate
 
 the controller logic, making the code cleaner and easier to manage.
 
-### Q269. **Can you list different types of ViewResolvers used in Spring MVC?**
+### Q37. **Can you list different types of ViewResolvers used in Spring MVC?**
 
 In Spring MVC, various types of ViewResolver are used to handle different view technologies.
 
@@ -622,23 +622,23 @@ Common ones include:
 
 These resolvers help in rendering appropriate view types.
 
-### Q270. **How does the InternalResourceViewResolver function?**
+### Q38. **How does the InternalResourceViewResolver function?**
 
 The InternalResourceViewResolver in Spring MVC helps find JSP files for views. It adds a prefix and suffix to the view name from the controller to create the full path to the JSP file.
 
 For example, if the prefix is /WEB-INF/views/ and the suffix is .jsp, the view name home becomes /WEB-INF/views/home.jsp. This makes it easy to manage and find view files.
 
-### Q271. **What are the advantages of using a ContentNegotiatingViewResolver?**
+### Q39. **What are the advantages of using a ContentNegotiatingViewResolver?**
 
 The ContentNegotiatingViewResolver in Spring MVC has several benefits. It lets our app support different view types like JSON, XML, and HTML based on what the client requests. It automatically chooses the right view by looking at the request’s content type. This makes configuration easier because it works with other view resolvers, allowing our app to handle different response formats flexibly and meet various client needs.
 
-### Q272. **How are interceptors used in Spring MVC?**
+### Q40. **How are interceptors used in Spring MVC?**
 
 In Spring MVC, interceptors are used to run code before and after a request is handled by a controller. They implement the HandlerInterceptor interface. The main methods are preHandle (runs before the controller method), postHandle (runs after the controller method but before the view is shown), and afterCompletion (runs after the view is shown).
 
 Interceptors are useful for tasks like logging, authentication, and modifying requests or responses.
 
-### Q273. **What are the methods in the HandlerInterceptor interface?**
+### Q41. **What are the methods in the HandlerInterceptor interface?**
 
 The HandlerInterceptor interface in Spring MVC has three main methods:
 
@@ -648,11 +648,11 @@ The HandlerInterceptor interface in Spring MVC has three main methods:
 
 These methods help manage request processing.
 
-### Q274. **How can you configure an interceptor to be applied globally?**
+### Q42. **How can you configure an interceptor to be applied globally?**
 
 To apply an interceptor globally in our application, create a configuration class and implement WebMvcConfigurer. In this class, override the addInterceptors method and add our interceptor. This will make sure the interceptor is applied to all HTTP requests in the application. For example, in a Spring Boot app, use `@Configuration` and add our interceptor in the overridden addInterceptors method.
 
-### Q275. **What is the difference between a Spring MVC interceptor and a web filter?**
+### Q43. **What is the difference between a Spring MVC interceptor and a web filter?**
 
 A Spring MVC interceptor works within the Spring framework to handle HTTP requests before and after they reach the controller. It helps with tasks like logging or authentication. A web filter, on the other hand, is more general and works at a lower level. It filters requests before they reach any servlet, handling tasks like security or data compression for all parts of the web application.
 
@@ -660,111 +660,111 @@ A Spring MVC interceptor works within the Spring framework to handle HTTP reques
 
 In Spring MVC, We can handle exceptions using @ExceptionHandler methods in our controllers for local handling, and @ControllerAdvice for global handling across multiple controllers. We can also use HandlerExceptionResolver to create custom ways to resolve exceptions. These features help us manage errors in a flexible and organized way throughout our Spring MVC application.
 
-### Q276. **How can you configure a global exception handler using `@ControllerAdvice`?**
+### Q44. **How can you configure a global exception handler using `@ControllerAdvice`?**
 
 To set up a global exception handler in Spring MVC, create a class and annotate it with @ControllerAdvice. Inside this class, add methods with the `@ExceptionHandler` annotation, specifying which exceptions they handle. These methods will manage exceptions for all controllers in our app, providing a centralized way to handle errors consistently.
 
-### Q277. **What is the use of @ExceptionHandler?**
+### Q45. **What is the use of @ExceptionHandler?**
 
 @ExceptionHandler is used in Spring MVC to handle errors in controller methods. If a method throws an exception, another method with `@ExceptionHandler` will be called to manage the error. This lets us create custom responses for different types of errors. We can use @ExceptionHandler in a specific controller or in a global class with `@ControllerAdvice` to handle errors for all controllers.
 
-### Q278. **How does Spring MVC differentiate between different types of exceptions?**
+### Q46. **How does Spring MVC differentiate between different types of exceptions?**
 
 Spring MVC uses the @ExceptionHandler annotation to tell different types of exceptions apart. Each method with @ExceptionHandler specifies the exception it handles. When an exception occurs, Spring MVC finds the matching @ExceptionHandler method for that exception type and runs it. This lets us handle different exceptions in specific ways.
 
-### Q279. **What are the options for implementing security in a Spring MVC application?**
+### Q47. **What are the options for implementing security in a Spring MVC application?**
 
 In a Spring MVC application, we can secure it using Spring Security. This tool helps with login, user roles, and protecting against attacks like CSRF. We can set it up with Java code or XML. Use annotations like @EnableWebSecurity and @Secured to secure methods. We can also use OAuth2 for single sign-on, JWT for token-based security, and customize who can access what with roles and permissions.
 
-### Q280. **How does Spring Security integrate with Spring MVC?**
+### Q48. **How does Spring Security integrate with Spring MVC?**
 
 Spring Security integrates with Spring MVC by setting up security rules through Java code or XML. We enable it with @EnableWebSecurity and configure it by extending WebSecurityConfigurerAdapter. This setup handles login, user roles, and session
 
 management. It uses filters to check security before requests reach our controllers, ensuring only authorized users can access our application.
 
-### Q281. **What are the common challenges when securing a Spring MVC application?**
+### Q49. **What are the common challenges when securing a Spring MVC application?**
 
 Securing a Spring MVC application involves several challenges. These include ensuring users are who they say they are (authentication) and have permission to access certain resources (authorization). Protecting against attacks like XSS and CSRF is also important. Using HTTPS for secure communication, encrypting sensitive data, keeping sessions secure, preventing SQL injection, and keeping security settings up-to-date are all key tasks. Regularly updating the software helps protect against new vulnerabilities.
 
-### Q282. **Can you describe the configuration steps necessary for method-level security?**
+### Q50. **Can you describe the configuration steps necessary for method-level security?**
 
 To set up method-level security in a Spring application, add @EnableGlobalMethodSecurity in our configuration class. Use annotations like @PreAuthorize, @PostAuthorize, @Secured, or @RolesAllowed on our methods to control access. Create a security configuration class that extends WebSecurityConfigurerAdapter and set up authentication and authorization details. Make sure the security context is configured to manage user roles and permissions.
 
-### Q283. **Explain the concept of dependency injection in the context of Spring MVC.**
+### Q51. **Explain the concept of dependency injection in the context of Spring MVC.**
 
 Dependency injection in Spring MVC is a way to make our code cleaner and easier to manage. Instead of creating objects manually, we tell Spring what we need, and it provides those objects for us. This makes our code less dependent on specific implementations and easier to test and maintain. Spring’s container takes care of creating and injecting the required objects where needed.
 
-### Q284. **How does Spring MVC utilize dependency injection with controllers?**
+### Q52. **How does Spring MVC utilize dependency injection with controllers?**
 
 Spring MVC uses dependency injection to simplify working with controllers. We mark our controllers with @Controller and use @Autowired to indicate the services or components they need. Spring automatically provides these dependencies, so we don’t have to create them ourself. This makes our code cleaner, easier to test, and more maintainable by letting Spring handle the setup and connections between objects.
 
-### Q285. **What types of dependency injection are supported?**
+### Q53. **What types of dependency injection are supported?**
 
 Spring supports three types of dependency injection: constructor, setter, and field injection. Constructor injection passes needed objects through a class’s constructor. Setter injection uses methods to set the needed objects after the class is created. Field injection directly injects objects into class fields using the @Autowired annotation. Constructor injection is best for required objects, while setter and field injections are useful for optional ones.
 
-### Q286. **What are the benefits of using dependency injection in web applications?**
+### Q54. **What are the benefits of using dependency injection in web applications?**
 
 Dependency injection in web applications makes the code easier to manage and change. It helps us test our code by allowing us to use fake objects for testing. It also makes the code cleaner and easier to read by reducing repetitive setup. This approach keeps different parts of our code separate and organized, making the application more flexible, scalable, and easier to maintain.
 
-### Q287. **How does Spring MVC support data binding?**
+### Q55. **How does Spring MVC support data binding?**
 
 Spring MVC supports data binding by automatically connecting form data from HTTP requests to Java objects. It uses @ModelAttribute to bind the request data to an object and @RequestParam to bind individual parameters. It also provides BindingResult to handle validation errors. We can register custom editors and formatters to convert data into the right types, making it easy to move data between the client and the server.
 
-### Q288. **What is the role of the @RequestParam annotation?**
+### Q56. **What is the role of the @RequestParam annotation?**
 
 The @RequestParam annotation in Spring MVC is used to get data from the URL or form and pass it to our controller methods. It helps us easily capture and use query parameters or form data. We can also set default values and specify if a parameter is required or optional. This makes our controller methods cleaner and easier to read.
 
-### Q289. **How can you customize data binding for complex objects?**
+### Q57. **How can you customize data binding for complex objects?**
 
 To customize data binding for complex objects in Spring MVC, use @InitBinder methods in our controller. These methods let us create custom converters to handle the conversion of request data to complex object fields. This ensures data like dates or custom types are correctly processed. We can also add validation annotations and custom validators to check the data during binding, making sure it meets our rules.
 
-### Q290. **What are the challenges associated with data binding and how can they be addressed?**
+### Q58. **What are the challenges associated with data binding and how can they be addressed?**
 
 Challenges with data binding include handling complex data, managing validation errors, and ensuring security. To address these, use custom converters for complex types and
 
 @InitBinder for custom binding rules. Use validation annotations and custom validators to handle errors and enforce rules. For security, always validate and sanitize input, and use measures like specifying allowed fields and excluding certain fields from binding to protect against malicious input.
 
-### Q291. **Explain how you can handle static resources in Spring MVC.**
+### Q59. **Explain how you can handle static resources in Spring MVC.**
 
 In Spring MVC, we handle static resources like images, CSS, and JavaScript by setting up a resource handler. In a configuration class, use @EnableWebMvc and override the
 
 addResourceHandlers method from WebMvcConfigurer. This lets us map URL patterns to specific folders like /resources/, /static/, or /public/. This way, our application can efficiently serve static files from these directories.
 
-### Q292. **How can you configure Spring MVC to serve static files like CSS, JavaScript, or images?**
+### Q60. **How can you configure Spring MVC to serve static files like CSS, JavaScript, or images?**
 
 To serve static files in Spring MVC, implement the WebMvcConfigurer interface and override the addResourceHandlers method. This method lets us map URL patterns to locations in our project where the static files are stored. This way, when a browser requests CSS, JavaScript, or images, Spring MVC knows where to find and serve these files from our project.
 
-### Q293. **What are the implications of resource handling for application performance?**
+### Q61. **What are the implications of resource handling for application performance?**
 
 Handling resources well is key to making an application run smoothly and quickly. It involves managing things like memory, CPU, and network use carefully to avoid slowdowns and crashes. When resources are managed well, applications can handle more work and provide a better experience for users. If not managed well, applications can become slow and may even stop working properly.
 
-### Q294. **How does Spring manage resources differently in a web application context?**
+### Q62. **How does Spring manage resources differently in a web application context?**
 
 Spring Framework helps manage resources in web applications by using a system that controls how parts of the application are created and connected. This system, called the IoC (Inversion of Control) container, makes it easier to manage things like database connections and settings for different parts of the application. Spring handles these tasks automatically, helping the application run more efficiently and making it easier for developers to maintain and update it.
 
-### Q295. **What is the role of @PathVariable in Spring MVC?**
+### Q63. **What is the role of @PathVariable in Spring MVC?**
 
 In Spring MVC, the @PathVariable annotation helps grab parts of the URL and use them in our code. For example, if we have a URL like /users/123, using @PathVariable allows us to take the 123 part and use it in our program to do things like looking up user information. It makes it easy to handle web pages that need to change based on what the URL says.
 
-### Q296. **How can you extract values from a URL using @PathVariable?**
+### Q64. **How can you extract values from a URL using @PathVariable?**
 
 To extract values from a URL using @PathVariable in Spring MVC, we include placeholders in the URL pattern of our method, like @GetMapping(“/users/{userId}”). Here, {userId} is a placeholder. In our method, we use @PathVariable with a parameter, for example
 
 (@PathVariable String userId), to capture the value from the URL. This lets us use the value directly in our method, like fetching user details with that ID.
 
-### Q297. **What are the considerations when using @PathVariable in terms of URL design?**
+### Q65. **What are the considerations when using @PathVariable in terms of URL design?**
 
 When designing URLs with @PathVariable, make sure the names of path variables clearly show what they represent, like using {userId} for user IDs. Keep URLs simple and logical to avoid confusion. Watch out for conflicts between fixed parts of the URL and the variable parts. Also, make sure every URL is unique and consistent throughout our application so they clearly point to the right parts of our program.
 
-### Q298. **How does @PathVariable interact with other request mappings?**
+### Q66. **How does @PathVariable interact with other request mappings?**
 
 @PathVariable works with other request mapping annotations in Spring MVC by taking parts of the URL and using them as parameters in our methods. For example, if we set up a URL pattern with @RequestMapping or @GetMapping, @PathVariable can pick up specific parts of that URL, like an ID or a name, and send them to our method. This makes our web application flexible, allowing it to handle URLs that change based on user input.
 
-### Q299. **How does Spring MVC use LocaleResolver?**
+### Q67. **How does Spring MVC use LocaleResolver?**
 
 Spring MVC uses LocaleResolver to manage internationalization by figuring out the locale, or regional setting, for each request. This can be based on things like session data, cookies, or browser settings. Once the locale is determined, it helps display text, dates, and numbers in ways that fit the user’s location and language. This makes the application user-friendly globally, showing information in the local format and language preferred by the user.
 
-### Q300. **Can you provide an example of changing languages dynamically on the frontend?**
+### Q68. **Can you provide an example of changing languages dynamically on the frontend?**
 
 To change languages on a website dynamically, we can add a dropdown menu where users pick their language. When a user selects a language from the menu, the choice can be saved in the browser or sent to the server. Then, the website updates its text to match the chosen language. This way, the language changes right away, and the user doesn’t have to reload the page to see it.
 
@@ -772,35 +772,35 @@ To change languages on a website dynamically, we can add a dropdown menu where u
 
 In Spring Web MVC, @SessionAttributes helps keep data across multiple pages, like during a multi-page form process. It saves certain data in the user’s session, so we don’t lose it between different steps. On the other hand, @CookieValue lets us use information stored in cookies, like user settings or login status. This makes it easier to personalize the site without having to ask for the same details again.
 
-### Q301. **What are the security considerations when using @SessionAttributes and @CookieValue annotations?**
+### Q69. **What are the security considerations when using @SessionAttributes and @CookieValue annotations?**
 
 When using `@SessionAttributes` and @CookieValue in Spring MVC, it’s important to handle security carefully. With @SessionAttributes, make sure not to store sensitive data in the session where it might be stolen. For @CookieValue, be careful about what we store in cookies and use security settings to protect them. This helps prevent issues like someone stealing cookie data or manipulating our website through scripts (XSS attacks). Always focus on keeping sessions and cookies secure.
 
-### Q302. **How do you test Spring MVC applications?**
+### Q70. **How do you test Spring MVC applications?**
 
 To test Spring MVC applications, we can use tools like JUnit for running tests and Mockito for handling mock objects. Spring also provides a tool called MockMvc that lets us simulate sending HTTP requests to our application and check the responses. This setup helps us make sure our app is working as expected by testing different parts, such as checking if the right pages load and if the data in responses is correct.
 
-### Q303. **What frameworks are used for testing Spring MVC components?**
+### Q71. **What frameworks are used for testing Spring MVC components?**
 
 For testing Spring MVC components, we typically use JUnit, which helps check small parts of our application independently. Mockito is another tool used to create fake versions of the parts our app interacts with, allowing us to test each piece separately. Spring Test’s
 
 MockMvc is also useful as it lets us test our controllers by simulating HTTP requests and checking the responses. These tools help make sure each part of our app works right.
 
-### Q304. **How can you mock Spring MVC dependencies for unit testing?**
+### Q72. **How can you mock Spring MVC dependencies for unit testing?**
 
 To mock dependencies in Spring MVC for unit testing, we can use Mockito to create fake versions of the services or databases that our controllers use. Start by using @WebMvcTest on our test class to set up a testing environment for just the MVC parts. Then, add @MockBean to our test class to replace real services with these mocks. This allows us to control how these dependencies behave during testing, making sure our controllers act correctly.
 
-### Q305. **What are the best practices for integration testing in Spring MVC?**
+### Q73. **What are the best practices for integration testing in Spring MVC?**
 
 For good integration testing in Spring MVC, here are some key tips: Use the
 
 `@SpringBootTest` annotation to test how all parts of our application work together. Use tools like TestRestTemplate or MockMvc to mimic sending HTTP requests and checking the responses. Keep our testing environment separate from our production environment to avoid mixing data. Always clean up our test data after tests to prevent issues. Make sure to test how different parts of our application interact and handle data.
 
-### Q306. **Explain how Spring MVC supports file upload.**
+### Q74. **Explain how Spring MVC supports file upload.**
 
 Spring MVC lets us upload files by using the MultipartFile interface. First, we create a form on our webpage that can send files, making sure to set enctype=“multipart/form-data”. In our Spring controller, we use @RequestParam to link a method parameter to the file input field on our form. This way, when a file is uploaded, the MultipartFile parameter in our method captures the file’s data, letting us work with it in our application.
 
-### Q307. **What configurations are needed to enable file uploads in a Spring MVC application?**
+### Q75. **What configurations are needed to enable file uploads in a Spring MVC application?**
 
 To set up file uploads in a Spring MVC application, we need to do a few things:
 
@@ -809,39 +809,36 @@ To set up file uploads in a Spring MVC application, we need to do a few things:
 3. Make sure our HTML form that uploads the file has enctype=“multipart/form-data”.
 4. Set limits for how big the uploaded files can be and how much data can be sent per request to manage resources properly.
 
-### Q308. **How can you handle file upload in a controller?**
+### Q76. **How can you handle file upload in a controller?**
 
 To handle file uploads in a Spring MVC controller, create a method that takes a MultipartFile as a parameter, labeled with @RequestParam. Make sure our HTML form for uploading files specifies enctype=“multipart/form-data” and that the name of the form’s file input matches the @RequestParam name. In this method, we can use the MultipartFile to save the file, check its type, or do any other processing our application needs.
 
-### Q309. **What are the common issues faced during file uploads and their solutions?**
+### Q77. **What are the common issues faced during file uploads and their solutions?**
 
 Common problems with file uploads include files being too large, uploading the wrong file types, and uploads taking too long. To fix these, we can set limits on how large files can be and check that the files are the correct type before accepting them. For slow uploads, we might need to adjust our server to wait longer before timing out, especially if we are dealing with big files or slow internet connections.
 
-### Q310. **How can Spring MVC be integrated with other technologies like JPA or WebSocket?**
+### Q78. **How can Spring MVC be integrated with other technologies like JPA or WebSocket?**
 
 Spring MVC can work with JPA (Java Persistence API) to handle database operations easily using Spring Data JPA. For real-time communication, it can integrate with WebSocket by using Spring’s @EnableWebSocket annotation and WebSocketConfigurer interface. This setup allows us to build web applications that efficiently manage data and support real-time updates between the server and clients.
 
-### Q311. **What are some advanced features or techniques in Spring MVC that are useful for high-traffic applications?**
+### Q79. **What are some advanced features or techniques in Spring MVC that are useful for high-traffic applications?**
 
 For high-traffic applications, Spring MVC offers advanced features like handling long-running tasks without blocking using asynchronous processing, reducing database load with caching, and managing resources efficiently with connection pooling. Other useful techniques include optimizing RESTful services, using content negotiation to serve different data formats, and securing the application with Spring Security for strong authentication and authorization.
 
-### Q312. **How can caching be implemented in Spring MVC?**
+### Q80. **How can caching be implemented in Spring MVC?**
 
 To implement caching in Spring MVC, we first enable caching by adding `@EnableCaching` in our configuration class. Then, use the @Cacheable annotation on methods to cache their results. For example, @Cacheable(“items”) will cache the output of that method. We can use different caching providers like EhCache, Redis, or Hazelcast to store the cache data.
 
-### Q313. **What are the strategies for asynchronous processing in Spring MVC?**
+### Q81. **What are the strategies for asynchronous processing in Spring MVC?**
 
 In Spring MVC, we can use Callable, DeferredResult, and WebAsyncTask to handle tasks asynchronously. These methods run in a separate thread, so the main thread can handle other requests. We can also use the @Async annotation to run methods in the background. These strategies help our application handle more requests by not blocking the main thread with long-running tasks.
 
-### Q314. **How can you scale a Spring MVC application horizontally?**
+### Q82. **How can you scale a Spring MVC application horizontally?**
 
 To scale a Spring MVC application horizontally, run multiple copies of the app on different servers and use a load balancer to share the traffic. Make sessions stateless or store them in a distributed system like Redis. Manage the database by replicating or dividing it to handle more data. Breaking the application into smaller microservices can also help with scaling.
 
 
-
-
-# Spring Advance:
-# Spring Advanced:
+## Spring Advanced:
 
 
 
@@ -860,7 +857,7 @@ Use caching to store frequently accessed data, reducing the need to fetch it fro
 
 ---
 
-### Q200. **Describe how to implement security in a microservices architecture using Spring Boot and Spring Security.**
+### Q83. **Describe how to implement security in a microservices architecture using Spring Boot and Spring Security.**
 
 ---
 
@@ -903,7 +900,7 @@ This approach helps keep the application reliable and efficient.
 
 ---
 
-### Q201. **How you would manage externalized configuration and secure sensitive configuration properties in a microservices**
+### Q84. **How you would manage externalized configuration and secure sensitive configuration properties in a microservices**
 
 **architecture?**
 
@@ -917,7 +914,7 @@ If there are any secret settings, like passwords, I would make sure they are scr
 
 ---
 
-### Q202. **Can we create a non-web application in Spring Boot?**
+### Q85. **Can we create a non-web application in Spring Boot?**
 
 ---
 
@@ -929,7 +926,7 @@ This way, Spring Boot helps us build many different types of applications, not j
 
 ---
 
-### Q203. **What does the @SpringBootApplication annotation do internally?**
+### Q86. **What does the @SpringBootApplication annotation do internally?**
 
 ---
 
@@ -949,7 +946,7 @@ and services in the current package, allowing it to find and register them.
 
 ---
 
-### Q204. **How does Spring Boot support internationalization (i18n)?**
+### Q87. **How does Spring Boot support internationalization (i18n)?**
 
 ---
 
@@ -963,7 +960,7 @@ This way, our application can speak to users in their language, making it more u
 
 ---
 
-### Q205. **What Is Spring Boot DevTools Used For?**
+### Q88. **What Is Spring Boot DevTools Used For?**
 
 ---
 
@@ -975,7 +972,7 @@ Basically, it’s like having a helpful assistant that speeds up our work by tak
 
 ---
 
-### Q206. **How can you mock external services in a Spring Boot test?**
+### Q89. **How can you mock external services in a Spring Boot test?**
 
 ---
 
@@ -987,7 +984,7 @@ Then, we can define how this mock should behave using mocking frameworks like Mo
 
 ---
 
-### Q207. **How do you mock microservices during testing?**
+### Q90. **How do you mock microservices during testing?**
 
 ---
 
@@ -999,7 +996,7 @@ This method is great for testing how our app works with other services without n
 
 ---
 
-### Q208. **Explain the process of creating a Docker image for a Spring Boot application.**
+### Q91. **Explain the process of creating a Docker image for a Spring Boot application.**
 
 ---
 
@@ -1031,7 +1028,7 @@ I’d use special security checks in Spring Boot to grab and check the JWT on ea
 
 ---
 
-### Q209. **How can Spring Boot applications be made more resilient to failures, especially in microservices architectures?**
+### Q92. **How can Spring Boot applications be made more resilient to failures, especially in microservices architectures?**
 
 ---
 
@@ -1041,7 +1038,7 @@ Also, setting up timeouts helps avoid waiting too long for something that might 
 
 ---
 
-### Q210. **Explain the conversion of business logic into serverless functions with Spring Cloud Function.**
+### Q93. **Explain the conversion of business logic into serverless functions with Spring Cloud Function.**
 
 ---
 
@@ -1053,7 +1050,7 @@ This setup lets our code automatically adjust to more or fewer requests, saving 
 
 ---
 
-### Q211. **How can Spring Cloud Gateway be configured for routing, security, and monitoring?**
+### Q94. **How can Spring Cloud Gateway be configured for routing, security, and monitoring?**
 
 ---
 
@@ -1067,7 +1064,7 @@ This setup allows us to control how requests are handled, secure the gateway, an
 
 ---
 
-### Q212. **How would you manage and monitor asynchronous tasks in a Spring Boot application, ensuring that you can track task progress and handle failures?**
+### Q95. **How would you manage and monitor asynchronous tasks in a Spring Boot application, ensuring that you can track task progress and handle failures?**
 
 ---
 
@@ -1099,7 +1096,7 @@ Additionally, I’d configure users and their roles in the configure(Authenticat
 
 ---
 
-### Q213. **How to Tell an Auto-Configuration to Back Away When a Bean Exists?**
+### Q96. **How to Tell an Auto-Configuration to Back Away When a Bean Exists?**
 
 ---
 
@@ -1111,7 +1108,7 @@ For example, if we are auto-configuring a data source but want to back off when 
 
 ---
 
-### Q214. **How to Deploy Spring Boot Web Applications as Jar and War Files?**
+### Q97. **How to Deploy Spring Boot Web Applications as Jar and War Files?**
 
 ---
 
@@ -1121,7 +1118,7 @@ If we need a WAR file for deployment on an external server, we change the packag
 
 ---
 
-### Q215. **What Does It Mean That Spring Boot Supports Relaxed Binding?**
+### Q98. **What Does It Mean That Spring Boot Supports Relaxed Binding?**
 
 ---
 
@@ -1145,7 +1142,7 @@ If all tests pass, the app can be automatically sent to a test environment or di
 
 ---
 
-### Q216. **Can we override or replace the Embedded Tomcat server in Spring Boot?**
+### Q99. **Can we override or replace the Embedded Tomcat server in Spring Boot?**
 
 ---
 
@@ -1155,7 +1152,7 @@ Spring Boot automatically configures the new server as the embedded server for o
 
 ---
 
-### Q217. **How to resolve whitelabel error page in the spring boot application?**
+### Q100. **How to resolve whitelabel error page in the spring boot application?**
 
 ---
 
@@ -1165,7 +1162,7 @@ This way, instead of the default error page, visitors can see a more helpful or 
 
 ---
 
-### Q218. **How can you implement pagination in a springboot application?**
+### Q101. **How can you implement pagination in a springboot application?**
 
 ---
 
@@ -1177,7 +1174,7 @@ This PageRequest is then passed to the repository method. Spring Data JPA handle
 
 ---
 
-### Q219. **How to handle a 404 error in spring boot?**
+### Q102. **How to handle a 404 error in spring boot?**
 
 ---
 
@@ -1189,7 +1186,7 @@ In this method, we can check the error type and customize what users see when th
 
 ---
 
-### Q220. **How can Spring Boot be used to implement event-driven architectures?**
+### Q103. **How can Spring Boot be used to implement event-driven architectures?**
 
 ---
 
@@ -1201,7 +1198,7 @@ manageable.
 
 ---
 
-### Q221. **What are the basic Annotations that Spring Boot offers?**
+### Q104. **What are the basic Annotations that Spring Boot offers?**
 
 ---
 
@@ -1261,7 +1258,7 @@ This approach allows me to retain the data for audit purposes while maintaining 
 
 **You’re tasked with building a non-blocking, reactive REST API that can handle a high volume of concurrent requests efficiently.**
 
-### Q222. **Describe how you would use Spring WebFlux to achieve this.**
+### Q105. **Describe how you would use Spring WebFlux to achieve this.**
 
 ---
 
@@ -1360,7 +1357,7 @@ Additionally, with the `@Profile` annotation, I would selectively load certain b
 
 ---
 
-### Q223. **What strategies would you use to optimize the performance of a Spring Boot application?**
+### Q106. **What strategies would you use to optimize the performance of a Spring Boot application?**
 
 ---
 
@@ -1375,7 +1372,7 @@ Additionally, with the `@Profile` annotation, I would selectively load certain b
 
 ---
 
-### Q224. **Describe a scenario where a Spring Boot application needs to**
+### Q107. **Describe a scenario where a Spring Boot application needs to**
 
 **dynamically switch between multiple data sources at runtime based on the request context.**
 
@@ -1403,7 +1400,7 @@ expected
 
 ---
 
-### Q225. **Describe how you would secure sensitive data in a Spring Boot application that is accessed by multiple users with different roles.**
+### Q108. **Describe how you would secure sensitive data in a Spring Boot application that is accessed by multiple users with different roles.**
 
 ---
 
@@ -1437,7 +1434,7 @@ To keep things safe, it’s important to make sure only the right people can con
 
 ---
 
-### Q226. **How would you implement efficient handling of large file uploads in a Spring Boot REST API, ensuring that the system remains responsive and scalable?**
+### Q109. **How would you implement efficient handling of large file uploads in a Spring Boot REST API, ensuring that the system remains responsive and scalable?**
 
 ---
 
@@ -1447,7 +1444,7 @@ This way, the main part of the app stays fast and can handle more users or tasks
 
 ---
 
-### Q227. **How you would use Spring WebFlux to consume data from an external service in a non-blocking manner and process this data reactively within your Spring Boot application.**
+### Q110. **How you would use Spring WebFlux to consume data from an external service in a non-blocking manner and process this data reactively within your Spring Boot application.**
 
 ---
 
@@ -1491,7 +1488,7 @@ I’d make separate property files for each environment, like application-dev.pr
 
 ---
 
-### Q228. **Explain how you would use application events in Spring Boot to notify different parts of your application about significant activities**
+### Q111. **Explain how you would use application events in Spring Boot to notify different parts of your application about significant activities**
 
 ---
 

@@ -3,7 +3,7 @@
 
 ---
 
-### Q229. **How does Spring Security integrate with OAuth2 for authorization**
+### Q1. **How does Spring Security integrate with OAuth2 for authorization**
 
 ---
 
@@ -15,7 +15,7 @@ After successful authentication, the provider issues an access token to Spring S
 
 ---
 
-### Q230. **Explain Cross-Origin Resource Sharing (CORS) and how you would configure it in a Spring Boot application.**
+### Q2. **Explain Cross-Origin Resource Sharing (CORS) and how you would configure it in a Spring Boot application.**
 
 ---
 
@@ -27,7 +27,7 @@ This way, We control who can interact with our application, keeping it secure wh
 
 ---
 
-### Q231. **Explain SecurityContext and SecurityContext Holder in Spring security.**
+### Q3. **Explain SecurityContext and SecurityContext Holder in Spring security.**
 
 ---
 
@@ -39,7 +39,7 @@ This makes it easy to access the user’s details anywhere in the application, e
 
 ---
 
-### Q232. **What do you mean by OAuth2 Authorization code grant type**
+### Q4. **What do you mean by OAuth2 Authorization code grant type**
 
 ---
 
@@ -51,7 +51,7 @@ This process keeps user credentials safe, as the actual token exchange happens a
 
 ---
 
-### Q233. **How does Spring Security protect against Cross-Site Request Forgery (CSRF) attacks, and under what circumstances might you disable CSRF protection?**
+### Q5. **How does Spring Security protect against Cross-Site Request Forgery (CSRF) attacks, and under what circumstances might you disable CSRF protection?**
 
 ---
 
@@ -63,7 +63,7 @@ Disabling CSRF in these cases simplifies the integration with these services wit
 
 ---
 
-### Q234. **How can you implement method-level security in a Spring application, and what are the advantages of this approach?**
+### Q6. **How can you implement method-level security in a Spring application, and what are the advantages of this approach?**
 
 ---
 
@@ -85,7 +85,7 @@ This means each service doesn’t have to check security separately, making the 
 
 ---
 
-### Q235. **How can you use Spring Expression Language (SpEL) for fine-grained access control?**
+### Q7. **How can you use Spring Expression Language (SpEL) for fine-grained access control?**
 
 ---
 
@@ -105,7 +105,7 @@ This is done by defining patterns in the security settings, where I link certain
 
 ---
 
-### Q236. **What do you mean by digest authentication?**
+### Q8. **What do you mean by digest authentication?**
 
 ---
 
@@ -115,7 +115,7 @@ When the server gets this scrambled password, it compares it with its own scramb
 
 ---
 
-### Q237. **What is the best practice for storing passwords in a Spring Security application?**
+### Q9. **What is the best practice for storing passwords in a Spring Security application?**
 
 ---
 
@@ -125,7 +125,7 @@ Hashing converts the password into a unique, fixed-size string that cannot be ea
 
 ---
 
-### Q238. **Explain the purpose of the Spring Security filter chain and How would you add or customize a filter within the Spring Security filter chain**
+### Q10. **Explain the purpose of the Spring Security filter chain and How would you add or customize a filter within the Spring Security filter chain**
 
 ---
 
@@ -135,7 +135,7 @@ To add or customize a filter, I can define a new filter class and add it to the 
 
 ---
 
-### Q239. **How does Spring Security handle session management, and what are the options for handling concurrent sessions**
+### Q11. **How does Spring Security handle session management, and what are the options for handling concurrent sessions**
 
 ---
 
@@ -155,7 +155,7 @@ I might also enable debug logging for Spring Security to get more detailed infor
 
 ---
 
-### Q240. **Describe how to implement dynamic access-control policies in Spring Security.**
+### Q12. **Describe how to implement dynamic access-control policies in Spring Security.**
 
 ---
 
@@ -165,7 +165,7 @@ This allows the access rules to be determined based on the current state of the 
 
 ---
 
-### Q241. **How do you test security configurations in Spring applications?**
+### Q13. **How do you test security configurations in Spring applications?**
 
 ---
 
@@ -177,7 +177,7 @@ By using MockMvc in Spring MVC tests, I can assert that the security rules are c
 
 ---
 
-### Q242. **Explain salting and its usage in spring security**
+### Q14. **Explain salting and its usage in spring security**
 
 ---
 
@@ -189,7 +189,7 @@ When a password needs to be checked, it’s combined with its salt again, hashed
 
 ---
 
-### Q243. **How can you use Spring Expression Language (SpEL) for fine-grained access control?**
+### Q15. **How can you use Spring Expression Language (SpEL) for fine-grained access control?**
 
 ---
 
@@ -201,7 +201,7 @@ This allows for detailed control over who can access what in the application, ma
 
 ---
 
-### Q244. **Explain what is AuthenticationManager and ProviderManager in Spring security.**
+### Q16. **Explain what is AuthenticationManager and ProviderManager in Spring security.**
 
 ---
 
@@ -211,11 +211,11 @@ It goes through each way to find one that can confirm the user’s details are v
 
 ---
 
-### Q245. **When a user tries to access a resource without the necessary**
+### Q17. **When a user tries to access a resource without the necessary**
 
  **permissions, you want to redirect them to a custom “access denied” page instead of displaying the default Spring Security error message.**
 
-### Q246. **How would you achieve this in your Spring Security configuration?**
+### Q18. **How would you achieve this in your Spring Security configuration?**
 
 ---
 

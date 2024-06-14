@@ -1,9 +1,9 @@
 
-### Q414. **What is Git and how does it differ from other version control systems?**
+### Q1. **What is Git and how does it differ from other version control systems?**
 
 Git is a distributed version control system that allows multiple developers to collaborate on a project. Unlike centralized VCS, Git stores the entire history of the project locally.
 
-### Q415. **Explain the difference between Git clone, pull, and fetch.**
+### Q2. **Explain the difference between Git clone, pull, and fetch.**
 
 **git clone** creates a local copy of a remote repository. 
 
@@ -11,35 +11,35 @@ Git is a distributed version control system that allows multiple developers to c
 
 **git fetch** fetches changes from the remote repository but does not merge them.
 
-### Q416. **What is a Git repository?**
+### Q3. **What is a Git repository?**
 
 A Git repository is a data structure that stores metadata for a project, including files, directories, commit history, branches, and tags. It allows developers to track changes, collaborate, and manage versions of their code.
 
-### Q417. **What is a Git commit?**
+### Q4. **What is a Git commit?**
 
 A Git commit is a snapshot of changes made to the repository at a specific point in time. It includes a unique identifier, author, timestamp, and a message describing the changes.
 
-### Q418. **What is a Git branch?**
+### Q5. **What is a Git branch?**
 
 A Git branch is a lightweight movable pointer to a commit. It allows developers to work on new features or bug fixes without affecting the main codebase. Branches can be merged or deleted once their purpose is served.
 
-### Q419. **What is a Git merge?**
+### Q6. **What is a Git merge?**
 
 Git merge combines changes from one branch into another. It creates a new commit that incorporates the changes from the specified branch into the current branch.
 
-### Q420. **What is a Git conflict?**
+### Q7. **What is a Git conflict?**
 
 A Git conflict occurs when two or more branches have made changes to the same part of a file, and Git is unable to automatically merge the changes. Resolving conflicts involves manually editing the affected files to reconcile the differences.
 
-### Q421. **What is a Git remote?**
+### Q8. **What is a Git remote?**
 
 A Git remote is a reference to a repository hosted on a server. It allows developers to interact with the repository, fetch changes, and push commits.
 
-### Q422. **Explain Git branching strategies like Gitflow and GitHub Flow.**
+### Q9. **Explain Git branching strategies like Gitflow and GitHub Flow.**
 
 Gitflow is a branching model that defines a strict branching strategy with long-lived branches for development, release, and hotfixes. GitHub Flow is a simpler approach with short-lived branches focused on continuous delivery.
 
-### Q423. **How do you revert a commit in Git?**
+### Q10. **How do you revert a commit in Git?**
 
 You can revert a commit in Git using the git revert command followed by the commit hash you want to revert. This creates a new commit that undoes the changes introduced by the specified commit.
 

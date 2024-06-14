@@ -1,6 +1,6 @@
 # **Java Most Asked Stream API Coding Questions**
 
-### Q424. **Filter Even Numbers**
+### Q1. **Filter Even Numbers**
 
 **Problem:** Given a list of integers, return a list containing only even numbers.
 
@@ -16,7 +16,7 @@
 
 **Explanation:** The filter method is used to apply a condition that keeps only even numbers. The collect method gathers the results into a new list.
 
-### Q425. **Find Maximum**
+### Q2. **Find Maximum**
 
 **Problem:** Find the maximum value in a list of integers.
 
@@ -28,7 +28,7 @@
 
 **Explanation:** The max method takes a comparator and returns the maximum element wrapped in an Optional.
 
-### Q426. **Sum of Elements**
+### Q3. **Sum of Elements**
 
 **Problem:** Calculate the sum of elements in a list of integers.
 
@@ -42,7 +42,7 @@
 
 **Explanation:**mapToInt converts the stream to an IntStream, which provides the sum method to get the total.
 
-### Q427. **List of Names to Uppercase**
+### Q4. **List of Names to Uppercase**
 
 **Problem:** Convert all strings in a list to uppercase.
 
@@ -56,7 +56,7 @@
 
 **Explanation:** The map function applies String::toUpperCase to each element, transforming them to uppercase.
 
-### Q428. **Sort List**
+### Q5. **Sort List**
 
 **Problem:** Sort a list of integers in ascending order.
 
@@ -70,7 +70,7 @@
 
 **Explanation:** The sorted method sorts the elements of the stream in natural order.
 
-### Q429. **Count Elements**
+### Q6. **Count Elements**
 
 **Problem:** Count the number of elements in a list that are greater than 5.
 
@@ -84,7 +84,7 @@
 
 **Explanation:** The filter method removes elements that don’t satisfy the condition, and count returns the number of elements remaining.
 
-### Q430. **Get Distinct Elements**
+### Q7. **Get Distinct Elements**
 
 **Problem:** Get a list of distinct elements from a list of integers.
 
@@ -98,7 +98,7 @@
 
 **Explanation:** The distinct method filters the stream to include only unique elements.
 
-### Q431. **Reduce to Sum**
+### Q8. **Reduce to Sum**
 
 **Problem:** Reduce a list of integers to their sum.
 
@@ -110,7 +110,7 @@
 
 **Explanation:** The reduce method takes an identity (0 in this case) and an accumulator function (Integer::sum) to calculate the total.
 
-### Q432. **Find Any**
+### Q9. **Find Any**
 
 **Problem:** Return any element from a list of integers.
 
@@ -120,7 +120,7 @@
 
 **Explanation:**findAny potentially returns any element from the stream, wrapped in an Optional.
 
-### Q433. **List First Names**
+### Q10. **List First Names**
 
 **Problem:** Extract first names from a list of full names.
 
@@ -134,7 +134,7 @@
 
 **Explanation:** The map function splits each name string and selects the first part.
 
-### Q434. **All Match**
+### Q11. **All Match**
 
 **Problem:** Check if all numbers in a list are positive.
 
@@ -146,7 +146,7 @@
 
 **Explanation:**allMatch returns true if every element in the stream matches the given predicate.
 
-### Q435. **None Match**
+### Q12. **None Match**
 
 **Problem:** Check if there are no negative numbers in a list.
 
@@ -158,7 +158,7 @@
 
 **Explanation:**noneMatch checks that no elements match the negative condition.
 
-### Q436. **Find First**
+### Q13. **Find First**
 
 **Problem:** Find the first element in a list of integers.
 
@@ -170,7 +170,7 @@
 
 **Explanation:**findFirst returns the first element of the stream, wrapped in an Optional.
 
-### Q437. **FlatMap for Nested Lists**
+### Q14. **FlatMap for Nested Lists**
 
 **Problem:** Flatten a nested list structure.
 
@@ -186,7 +186,7 @@
 
 **Explanation:**flatMap converts each element into its own stream and then merges them into a single stream.
 
-### Q438. **Grouping Elements**
+### Q15. **Grouping Elements**
 
 **Problem:** Group users by age.
 
@@ -198,7 +198,7 @@
 
 **Explanation:** The groupingBy collector groups elements based on the age property, creating a map where each key is an age and each value is a list of users with that age.
 
-### Q439. **Peek Elements**
+### Q16. **Peek Elements**
 
 **Problem:** Print elements of a stream during processing without altering the stream.
 
@@ -212,7 +212,7 @@
 
 **Explanation:**peek is used for debugging or performing actions without changing the stream. It prints each element before passing it along the stream.
 
-### Q440. **Limit Stream**
+### Q17. **Limit Stream**
 
 **Problem:** Limit the output to the first 3 elements of the list.
 
@@ -226,7 +226,7 @@
 
 **Explanation:**limit truncates the stream to be no longer than the specified size.
 
-### Q441. **Skip Elements**
+### Q18. **Skip Elements**
 
 **Problem:** Skip the first 2 elements of a list and return the rest.
 
@@ -240,7 +240,7 @@
 
 **Explanation:**skip discards the first n elements of the stream.
 
-### Q442. **Convert to Set**
+### Q19. **Convert to Set**
 
 **Problem:** Convert a list of integers to a set to remove duplicates.
 
@@ -252,7 +252,7 @@
 
 **Explanation:** Collecting the stream into a Set automatically removes duplicates.
 
-### Q443. **Summarizing Statistics**
+### Q20. **Summarizing Statistics**
 
 **Problem:** Get summary statistics for a list of integers.
 

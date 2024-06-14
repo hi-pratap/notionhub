@@ -5,6 +5,28 @@
 [data-md-color-primary=indigo] {
   --md-primary-fg-color: #476f00;
 }
+.md-typeset h1, .md-typeset h2 {
+  /* font-weight: 300;
+  letter-spacing: -.01em; */
+  border: inset;
+  border-radius: 15px;
+  color: navajowhite;
+}
+.md-typeset h3 {
+
+  margin: 1.6em 0 .8em;
+  color: lightcoral;
+  border: inset;
+  border-radius: 15px;
+}
+.md-content {
+ 
+  color: white;
+}
+.md-typeset code:not(.focus-visible) {
+
+  color: red;
+}
 :root > * {
 
 
