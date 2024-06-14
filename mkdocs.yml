@@ -125,8 +125,9 @@ nav:
     - Conditionals: pw-docs/conditionals.md
     - Loops: pw-docs/loops.md
     - Pattern Printing: pw-docs/PatternPrinting.md
-    - Arrays And ArrayList: pw-docs/Basics.md
+    - Arrays And ArrayList: pw-docs/Arrays.md
     - Multi-Diamentinal Arrays: pw-docs/Basics.md
+    - Strings: pw-docs/Basics.md
     - Strings: pw-docs/Basics.md
  
   - Blog:
