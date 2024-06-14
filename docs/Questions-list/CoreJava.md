@@ -3,7 +3,6 @@
 ### Q1. Can you tell me the difference between JVM, JRE, and JDK?**
 
 The JVM is the engine that runs Java bytecode and making Java platform-independent.
-
 The JRE contains the JVM and the standard libraries that Java programs need to run. The JDK is development kit for developers that contains everything in the JRE plus tools like compilers and debuggers to create Java applications.
 
 ### Q2. What are the key components of JVM Architecture?**
