@@ -10,6 +10,7 @@
   letter-spacing: -.01em; */
   /* border: inset;
   border-radius: 15px; */
+
   color: navajowhite;
 }
 .md-typeset h3 {
@@ -18,10 +19,14 @@
 font-weight: bolder;
   /* border: inset;
   border-radius: 15px; */
+  background-color: #333;
+  /* background-color:#f0f0f0 */
+  padding: 10px; border-radius: 5px; 
 }
 .md-content {
  
   color: white;
+ 
 }
 .md-typeset code:not(.focus-visible) {
 
