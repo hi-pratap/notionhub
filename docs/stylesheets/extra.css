@@ -8,16 +8,16 @@
 .md-typeset h1, .md-typeset h2 {
   /* font-weight: 300;
   letter-spacing: -.01em; */
-  border: inset;
-  border-radius: 15px;
+  /* border: inset;
+  border-radius: 15px; */
   color: navajowhite;
 }
 .md-typeset h3 {
 
   margin: 1.6em 0 .8em;
-  color: lightcoral;
-  border: inset;
-  border-radius: 15px;
+  color: navajowhite;
+  /* border: inset;
+  border-radius: 15px; */
 }
 .md-content {
  
