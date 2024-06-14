@@ -41,8 +41,9 @@
         Arrays.stream(c).forEach(System.out::println);
     }
 }
+```
 
-   ```
+
 **Problem Understanding**
 
 You have two sorted arrays, `a` and `b`, and you need to merge them into a single sorted array `c`.
@@ -60,7 +61,7 @@ The main idea behind merging two sorted arrays efficiently lies in using multipl
      - `k` will be used as an index for array `c`, where the merged elements will be placed.
 
 2. **Main Merge Loop**
-   ```java
+```java
    while (a.length > i && j < b.length) {
        if (a[i] < b[j]) {
            c[k] = a[i];
@@ -71,7 +72,7 @@ The main idea behind merging two sorted arrays efficiently lies in using multipl
        }
        k++;
    }
-   ```
+```
    - This loop continues until either all elements of `a` or all elements of `b` have been processed.
    - It compares the current elements pointed by `i` in `a` and `j` in `b`.
    - If the element in `a` (`a[i]`) is smaller than the element in `b` (`b[j]`), `a[i]` is placed in `c[k]`, and `i` is incremented.
@@ -81,7 +82,7 @@ The main idea behind merging two sorted arrays efficiently lies in using multipl
 3. **Copying Remaining Elements**
    - After exiting the main merge loop, it's possible that there are remaining elements in either `a` or `b` that haven't been processed.
 
-   ```java
+```java
    if (i == a.length) {
        // Copy remaining elements from array b
        while (j < b.length) {
@@ -98,15 +99,15 @@ The main idea behind merging two sorted arrays efficiently lies in using multipl
            k++;
        }
    }
-   ```
+```
    - These `if` conditions check whether all elements of `a` or all elements of `b` have been processed (`i == a.length` or `j == b.length`).
    - If `i == a.length`, it means all elements of `a` have been placed in `c`, so the remaining elements of `b` (`b[j]` where `j` ranges from its current position to `b.length - 1`) are copied directly into `c`.
    - If `j == b.length`, it means all elements of `b` have been placed in `c`, so the remaining elements of `a` (`a[i]` where `i` ranges from its current position to `a.length - 1`) are copied directly into `c`.
 
 4. **Output**
-   ```java
+```java
    Arrays.stream(c).forEach(System.out::println);
-   ```
+```
    - Finally, the merged array `c` is printed out using `Arrays.stream(c).forEach(System.out::println);`.
 
  **Efficiency**
@@ -119,7 +120,7 @@ The main idea behind merging two sorted arrays efficiently lies in using multipl
 Merging two sorted arrays is efficiently achieved using the two-pointer technique, ensuring that the resulting array remains sorted throughout the process. This approach minimizes the number of comparisons needed and ensures optimal performance.
 
 ### Q2. Basic Operation On ArrayList
- ```java
+```java
 public class BasicOperationOnArrayList {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
@@ -136,7 +137,7 @@ public class BasicOperationOnArrayList {
 ```
 
 ### Q3. Copy Of Array
- ```java
+```java
 public class CopyOfArray {
     public static void main(String[] args) {
         int[] srudent = {80, 90, 70, 67, 33, 44, 55, 66, 11, 22, 33, 65};
@@ -158,7 +159,7 @@ public class CopyOfArray {
     }
 }
 
- ```
+```
 ### Q4. Doublet In Array or TargetSum
 ```java
 public class DoubletInArrayTargetSum {
