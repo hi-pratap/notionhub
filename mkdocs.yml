@@ -66,7 +66,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/icons8-batman-logo-120.png
+  favicon: assets/halloween.png
   # favicon: assets/sign.png
   # icon:
   #   logo: simple/codefresh
